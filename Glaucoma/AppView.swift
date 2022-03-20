@@ -16,27 +16,25 @@ struct AppView: View {
     }
     
     var body: some View {
-        
-        
         TabView{
             HomeView()
                 .tabItem {
                     Image(systemName: "house")
                     Text("Home")
                 }
-            
             DataView()
                 .tabItem {
                     Image(systemName: "list.bullet")
                     Text("Data")
                 }
+            SettingView()
+                .tabItem{
+                    Text("Settings")
+                }
         }
         .accentColor(Color(red: 59/255, green: 222/255, blue: 210/255))
-        
-        
     }
 }
-
 struct AppView_Previews: PreviewProvider {
     static var previews: some View {
         AppView()

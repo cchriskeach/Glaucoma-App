@@ -24,14 +24,8 @@ struct DataOne: View {
     }
     
     var body: some View{
-        
         HStack{
-            
             Image(imgName)
-            
-            
-            
         }
-        
     }
 }

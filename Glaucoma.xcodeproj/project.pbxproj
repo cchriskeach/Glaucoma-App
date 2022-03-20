@@ -15,7 +15,74 @@
 		6032D19B257D9B4000E66007 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6032D19A257D9B4000E66007 /* ContentView.swift */; };
 		6032D19D257D9B4800E66007 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6032D19C257D9B4800E66007 /* Assets.xcassets */; };
 		6032D1A0257D9B4800E66007 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6032D19F257D9B4800E66007 /* Preview Assets.xcassets */; };
+		D6143AA127AF0D2500F273B4 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6143AA027AF0D2500F273B4 /* SettingView.swift */; };
+		D63819E827E63F7C004F2B5E /* SignInWithApple.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63819E627E63F7C004F2B5E /* SignInWithApple.swift */; };
+		D63819E927E63F7C004F2B5E /* SignInWithAppleDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63819E727E63F7C004F2B5E /* SignInWithAppleDelegates.swift */; };
+		D63819EC27E6427D004F2B5E /* CredentialStorage in Resources */ = {isa = PBXBuildFile; fileRef = D63819EB27E6427D004F2B5E /* CredentialStorage */; };
+		D63819F127E642BB004F2B5E /* SharedWebCredential.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63819EF27E642BB004F2B5E /* SharedWebCredential.swift */; };
+		D63819F227E642BB004F2B5E /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63819EE27E642BB004F2B5E /* UserData.swift */; };
+		D63819F327E642BB004F2B5E /* UserDataKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63819F027E642BB004F2B5E /* UserDataKeychain.swift */; };
+		D63819F427E642BB004F2B5E /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63819ED27E642BB004F2B5E /* Keychain.swift */; };
+		D63819F627E642FD004F2B5E /* WebApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63819F527E642FD004F2B5E /* WebApi.swift */; };
+		D63819F827E64BE3004F2B5E /* EnvironmentWindowKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63819F727E64BE3004F2B5E /* EnvironmentWindowKey.swift */; };
+		D659A8A027D867C6006E5CA4 /* SMART.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D659A89327D866EE006E5CA4 /* SMART.framework */; };
+		D659A8A127D867C6006E5CA4 /* SMART.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D659A89327D866EE006E5CA4 /* SMART.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D659A8A527D868C6006E5CA4 /* GlaucomaFHIRServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D659A8A427D868C6006E5CA4 /* GlaucomaFHIRServer.swift */; };
+		D69DEF6127E6A9D7001F5F6D /* PatientExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69DEF6027E6A9D7001F5F6D /* PatientExtension.swift */; };
+		D69DEF6327E6AFCD001F5F6D /* ObservationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69DEF6227E6AFCD001F5F6D /* ObservationExtension.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D659A89227D866EE006E5CA4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D659A88B27D866EE006E5CA4 /* SwiftSMART.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EE43B1A919546D880017679A;
+			remoteInfo = "SwiftSMART-iOS";
+		};
+		D659A89427D866EE006E5CA4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D659A88B27D866EE006E5CA4 /* SwiftSMART.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EE43B1B319546D880017679A;
+			remoteInfo = "SwiftSMART-iOSTests";
+		};
+		D659A89627D866EE006E5CA4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D659A88B27D866EE006E5CA4 /* SwiftSMART.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EECAA7831A5D3DE60062C64B;
+			remoteInfo = "SwiftSMART-macOS";
+		};
+		D659A89827D866EE006E5CA4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D659A88B27D866EE006E5CA4 /* SwiftSMART.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EE13AA921A5D44D100B901FD;
+			remoteInfo = "SwiftSMART-macOSTests";
+		};
+		D659A89A27D8675F006E5CA4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D659A88B27D866EE006E5CA4 /* SwiftSMART.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = EE43B1A819546D880017679A;
+			remoteInfo = "SwiftSMART-iOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D659A8A227D867C6006E5CA4 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D659A8A127D867C6006E5CA4 /* SMART.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		601AD88425836A2200A43234 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -28,6 +95,21 @@
 		6032D19C257D9B4800E66007 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6032D19F257D9B4800E66007 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6032D1A1257D9B4800E66007 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D6143AA027AF0D2500F273B4 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		D63819E627E63F7C004F2B5E /* SignInWithApple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInWithApple.swift; sourceTree = "<group>"; };
+		D63819E727E63F7C004F2B5E /* SignInWithAppleDelegates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInWithAppleDelegates.swift; sourceTree = "<group>"; };
+		D63819EB27E6427D004F2B5E /* CredentialStorage */ = {isa = PBXFileReference; lastKnownFileType = folder; path = CredentialStorage; sourceTree = "<group>"; };
+		D63819ED27E642BB004F2B5E /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
+		D63819EE27E642BB004F2B5E /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		D63819EF27E642BB004F2B5E /* SharedWebCredential.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedWebCredential.swift; sourceTree = "<group>"; };
+		D63819F027E642BB004F2B5E /* UserDataKeychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataKeychain.swift; sourceTree = "<group>"; };
+		D63819F527E642FD004F2B5E /* WebApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebApi.swift; sourceTree = "<group>"; };
+		D63819F727E64BE3004F2B5E /* EnvironmentWindowKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnvironmentWindowKey.swift; sourceTree = "<group>"; };
+		D659A88B27D866EE006E5CA4 /* SwiftSMART.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftSMART.xcodeproj; path = "Swift-SMART/SwiftSMART.xcodeproj"; sourceTree = "<group>"; };
+		D659A8A427D868C6006E5CA4 /* GlaucomaFHIRServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlaucomaFHIRServer.swift; sourceTree = "<group>"; };
+		D69DEF5A27E6A716001F5F6D /* Glaucoma.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Glaucoma.entitlements; sourceTree = "<group>"; };
+		D69DEF6027E6A9D7001F5F6D /* PatientExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientExtension.swift; sourceTree = "<group>"; };
+		D69DEF6227E6AFCD001F5F6D /* ObservationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservationExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D659A8A027D867C6006E5CA4 /* SMART.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +129,7 @@
 			children = (
 				6032D197257D9B4000E66007 /* Glaucoma */,
 				6032D196257D9B4000E66007 /* Products */,
+				D659A89C27D86776006E5CA4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,12 +144,18 @@
 		6032D197257D9B4000E66007 /* Glaucoma */ = {
 			isa = PBXGroup;
 			children = (
+				D69DEF5A27E6A716001F5F6D /* Glaucoma.entitlements */,
+				D659A88B27D866EE006E5CA4 /* SwiftSMART.xcodeproj */,
 				6032D198257D9B4000E66007 /* GlaucomaApp.swift */,
 				6032D19A257D9B4000E66007 /* ContentView.swift */,
 				601AD88725836D4B00A43234 /* AppView.swift */,
 				601AD88425836A2200A43234 /* HomeView.swift */,
+				D6143AA027AF0D2500F273B4 /* SettingView.swift */,
 				601AD88A25836D8A00A43234 /* DataView.swift */,
 				601AD8962583B45C00A43234 /* DataOne.swift */,
+				D69DEF5F27E6A90E001F5F6D /* FHIRResourceAssistance */,
+				D69DEF5E27E6A825001F5F6D /* AppleSignIn */,
+				D63819EB27E6427D004F2B5E /* CredentialStorage */,
 				6032D19C257D9B4800E66007 /* Assets.xcassets */,
 				6032D1A1257D9B4800E66007 /* Info.plist */,
 				6032D19E257D9B4800E66007 /* Preview Content */,
@@ -81,6 +171,49 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		D659A88C27D866EE006E5CA4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D659A89327D866EE006E5CA4 /* SMART.framework */,
+				D659A89527D866EE006E5CA4 /* SwiftSMART-iOSTests.xctest */,
+				D659A89727D866EE006E5CA4 /* SMART.framework */,
+				D659A89927D866EE006E5CA4 /* SwiftSMART-macOSTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D659A89C27D86776006E5CA4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D69DEF5E27E6A825001F5F6D /* AppleSignIn */ = {
+			isa = PBXGroup;
+			children = (
+				D63819F727E64BE3004F2B5E /* EnvironmentWindowKey.swift */,
+				D63819E627E63F7C004F2B5E /* SignInWithApple.swift */,
+				D63819E727E63F7C004F2B5E /* SignInWithAppleDelegates.swift */,
+				D63819ED27E642BB004F2B5E /* Keychain.swift */,
+				D63819EF27E642BB004F2B5E /* SharedWebCredential.swift */,
+				D63819EE27E642BB004F2B5E /* UserData.swift */,
+				D63819F527E642FD004F2B5E /* WebApi.swift */,
+				D63819F027E642BB004F2B5E /* UserDataKeychain.swift */,
+			);
+			path = AppleSignIn;
+			sourceTree = "<group>";
+		};
+		D69DEF5F27E6A90E001F5F6D /* FHIRResourceAssistance */ = {
+			isa = PBXGroup;
+			children = (
+				D659A8A427D868C6006E5CA4 /* GlaucomaFHIRServer.swift */,
+				D69DEF6027E6A9D7001F5F6D /* PatientExtension.swift */,
+				D69DEF6227E6AFCD001F5F6D /* ObservationExtension.swift */,
+			);
+			path = FHIRResourceAssistance;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -91,10 +224,12 @@
 				6032D191257D9B4000E66007 /* Sources */,
 				6032D192257D9B4000E66007 /* Frameworks */,
 				6032D193257D9B4000E66007 /* Resources */,
+				D659A8A227D867C6006E5CA4 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				D659A89B27D8675F006E5CA4 /* PBXTargetDependency */,
 			);
 			name = Glaucoma;
 			productName = Glaucoma;
@@ -126,6 +261,12 @@
 			mainGroup = 6032D18C257D9B4000E66007;
 			productRefGroup = 6032D196257D9B4000E66007 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = D659A88C27D866EE006E5CA4 /* Products */;
+					ProjectRef = D659A88B27D866EE006E5CA4 /* SwiftSMART.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				6032D194257D9B4000E66007 /* Glaucoma */,
@@ -133,12 +274,44 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		D659A89327D866EE006E5CA4 /* SMART.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SMART.framework;
+			remoteRef = D659A89227D866EE006E5CA4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D659A89527D866EE006E5CA4 /* SwiftSMART-iOSTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SwiftSMART-iOSTests.xctest";
+			remoteRef = D659A89427D866EE006E5CA4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D659A89727D866EE006E5CA4 /* SMART.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SMART.framework;
+			remoteRef = D659A89627D866EE006E5CA4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D659A89927D866EE006E5CA4 /* SwiftSMART-macOSTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SwiftSMART-macOSTests.xctest";
+			remoteRef = D659A89827D866EE006E5CA4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		6032D193257D9B4000E66007 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				6032D1A0257D9B4800E66007 /* Preview Assets.xcassets in Resources */,
+				D63819EC27E6427D004F2B5E /* CredentialStorage in Resources */,
 				6032D19D257D9B4800E66007 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -150,16 +323,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D63819F227E642BB004F2B5E /* UserData.swift in Sources */,
+				D63819F827E64BE3004F2B5E /* EnvironmentWindowKey.swift in Sources */,
+				D63819E827E63F7C004F2B5E /* SignInWithApple.swift in Sources */,
 				601AD8972583B45C00A43234 /* DataOne.swift in Sources */,
 				601AD88825836D4B00A43234 /* AppView.swift in Sources */,
 				601AD88525836A2200A43234 /* HomeView.swift in Sources */,
+				D6143AA127AF0D2500F273B4 /* SettingView.swift in Sources */,
+				D69DEF6327E6AFCD001F5F6D /* ObservationExtension.swift in Sources */,
 				601AD88B25836D8A00A43234 /* DataView.swift in Sources */,
+				D69DEF6127E6A9D7001F5F6D /* PatientExtension.swift in Sources */,
+				D659A8A527D868C6006E5CA4 /* GlaucomaFHIRServer.swift in Sources */,
+				D63819F127E642BB004F2B5E /* SharedWebCredential.swift in Sources */,
+				D63819F327E642BB004F2B5E /* UserDataKeychain.swift in Sources */,
+				D63819E927E63F7C004F2B5E /* SignInWithAppleDelegates.swift in Sources */,
 				6032D19B257D9B4000E66007 /* ContentView.swift in Sources */,
 				6032D199257D9B4000E66007 /* GlaucomaApp.swift in Sources */,
+				D63819F427E642BB004F2B5E /* Keychain.swift in Sources */,
+				D63819F627E642FD004F2B5E /* WebApi.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D659A89B27D8675F006E5CA4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "SwiftSMART-iOS";
+			targetProxy = D659A89A27D8675F006E5CA4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		6032D1A2257D9B4800E66007 /* Debug */ = {
@@ -283,9 +476,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Glaucoma/Glaucoma.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Glaucoma/Preview Content\"";
-				DEVELOPMENT_TEAM = LT7Q5W2JH7;
+				DEVELOPMENT_TEAM = Q7AB7Y6B9Z;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Glaucoma/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -305,9 +499,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Glaucoma/Glaucoma.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Glaucoma/Preview Content\"";
-				DEVELOPMENT_TEAM = LT7Q5W2JH7;
+				DEVELOPMENT_TEAM = Q7AB7Y6B9Z;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Glaucoma/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
