@@ -13,12 +13,25 @@ import AuthenticationServices
 struct MasterView: View {
     @State var nextScreen = false
     
+    init(){
+        let tabBarAppearance = UITabBarAppearance()
+        tabBarAppearance.configureWithOpaqueBackground()
+        tabBarAppearance.backgroundColor = UIColor(Color("Normal").opacity(0.9))
+        UITabBar.appearance().standardAppearance = tabBarAppearance
+        
+        //UITableView.appearance().separatorStyle = .none
+        UITableViewCell.appearance().backgroundColor = UIColor(Color.clear)
+        UITableView.appearance().backgroundColor = UIColor(Color.clear)
+        
+    }
+    
     var body: some View {
         VStack{
             if nextScreen{
-                AppView()
-                    .animation(.spring())
-                    .transition(.slide)
+                BLEMasterView().environmentObject(HomeViewModel())
+                    .environmentObject(BLEViewModel())
+                //AppView().environmentObject(HomeViewModel())
+                    //.environmentObject(BLEViewModel())
             } else {
                 withAnimation{
                     ContentView(nextScreen: $nextScreen)
@@ -134,24 +147,6 @@ struct ContentView: View {
         static var previews: some View {
             Group {
                 ContentView(nextScreen: Binding.constant(false))
-            }
-        }
-    }
-
-    struct AppView1: View {
-        var body: some View {
-            TabView{
-                HomeView()
-                    .tabItem {
-                        Image(systemName: "list.dash")
-                        Text("Home")
-                    }
-                
-                DataView()
-                    .tabItem {
-                        Image(systemName: "square.and.pencil")
-                        Text("Data")
-                    }
             }
         }
     }

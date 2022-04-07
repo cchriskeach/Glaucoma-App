@@ -28,6 +28,7 @@
 		D659A8A027D867C6006E5CA4 /* SMART.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D659A89327D866EE006E5CA4 /* SMART.framework */; };
 		D659A8A127D867C6006E5CA4 /* SMART.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D659A89327D866EE006E5CA4 /* SMART.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D659A8A527D868C6006E5CA4 /* GlaucomaFHIRServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D659A8A427D868C6006E5CA4 /* GlaucomaFHIRServer.swift */; };
+		D69BB3B027ED5F8100213289 /* StaticMemory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69BB3AC27ED5F8100213289 /* StaticMemory.swift */; };
 		D69DEF6127E6A9D7001F5F6D /* PatientExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69DEF6027E6A9D7001F5F6D /* PatientExtension.swift */; };
 		D69DEF6327E6AFCD001F5F6D /* ObservationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69DEF6227E6AFCD001F5F6D /* ObservationExtension.swift */; };
 /* End PBXBuildFile section */
@@ -107,6 +108,7 @@
 		D63819F727E64BE3004F2B5E /* EnvironmentWindowKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnvironmentWindowKey.swift; sourceTree = "<group>"; };
 		D659A88B27D866EE006E5CA4 /* SwiftSMART.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftSMART.xcodeproj; path = "Swift-SMART/SwiftSMART.xcodeproj"; sourceTree = "<group>"; };
 		D659A8A427D868C6006E5CA4 /* GlaucomaFHIRServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlaucomaFHIRServer.swift; sourceTree = "<group>"; };
+		D69BB3AC27ED5F8100213289 /* StaticMemory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticMemory.swift; sourceTree = "<group>"; };
 		D69DEF5A27E6A716001F5F6D /* Glaucoma.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Glaucoma.entitlements; sourceTree = "<group>"; };
 		D69DEF6027E6A9D7001F5F6D /* PatientExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientExtension.swift; sourceTree = "<group>"; };
 		D69DEF6227E6AFCD001F5F6D /* ObservationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservationExtension.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				D69DEF5A27E6A716001F5F6D /* Glaucoma.entitlements */,
 				D659A88B27D866EE006E5CA4 /* SwiftSMART.xcodeproj */,
 				6032D198257D9B4000E66007 /* GlaucomaApp.swift */,
+				D69BB3AC27ED5F8100213289 /* StaticMemory.swift */,
 				6032D19A257D9B4000E66007 /* ContentView.swift */,
 				601AD88725836D4B00A43234 /* AppView.swift */,
 				601AD88425836A2200A43234 /* HomeView.swift */,
@@ -326,6 +329,7 @@
 				D63819F227E642BB004F2B5E /* UserData.swift in Sources */,
 				D63819F827E64BE3004F2B5E /* EnvironmentWindowKey.swift in Sources */,
 				D63819E827E63F7C004F2B5E /* SignInWithApple.swift in Sources */,
+				D69BB3B027ED5F8100213289 /* StaticMemory.swift in Sources */,
 				601AD8972583B45C00A43234 /* DataOne.swift in Sources */,
 				601AD88825836D4B00A43234 /* AppView.swift in Sources */,
 				601AD88525836A2200A43234 /* HomeView.swift in Sources */,

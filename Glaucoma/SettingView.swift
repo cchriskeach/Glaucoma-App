@@ -8,7 +8,7 @@
 import SwiftUI
 import Models
 
-struct SettingView: View {
+struct SpencerView: View {
     var body: some View {
         ZStack(alignment: .top) {
             Button("Send test data to server") {
@@ -45,6 +45,96 @@ struct SettingView: View {
                 }
                 
             }
+            //end giant button :O
+        }
+    }
+}
+
+struct SettingView: View{
+    var body: some View{
+        ZStack{
+            Color("Normal").ignoresSafeArea()
+            
+            NavigationView{
+                VStack{
+                    Button(action:{
+                        //do something
+                    }) {
+                        Image(systemName: "person.crop.circle").resizable().frame(width: 90, height: 90, alignment: .center).padding(.top, 20)
+                    }
+                    
+                    Text("Name").font(.title).bold().padding(.all,10)
+                
+                    List{
+                        Section(header:HStack{
+                            Image(systemName: "info.circle").foregroundColor(.accentColor)
+                            Text("Medical Details")
+                            Spacer()
+                        }){
+                            NavigationLink(destination: SpencerView()){
+                                Text("Health Profile")
+                            }
+                            NavigationLink(destination: SpencerView()){
+                                Text("Health Records")
+                            }
+                            NavigationLink(destination: SpencerView()){
+                                Text("Doctor Contact")
+                            }
+                            NavigationLink(destination: SpencerView()){
+                                Text("Emergency Contact")
+                            }
+                        }.headerProminence(.increased)
+                        
+                        Section(header:HStack{
+                            Image(systemName: "iphone.radiowaves.left.and.right.circle").foregroundColor(.accentColor)
+                            Text("Bleutooth")
+                            Spacer()
+                        }){
+                            NavigationLink(destination: SpencerView()){
+                                Text("Reconnect to Device")
+                            }
+                        }.headerProminence(.increased)
+                        
+                        Section(header:HStack{
+                            Image(systemName: "figure.wave.circle").foregroundColor(.accentColor)
+                            Text("Accessibility")
+                            Spacer()
+                        }){
+                            NavigationLink(destination: SpencerView()){
+                                Text("Input IOP Range")
+                            }
+                            NavigationLink(destination: SpencerView()){
+                                Text("Change Accent Color")
+                            }
+                            NavigationLink(destination: SpencerView()){
+                                Text("Notificaitions")
+                            }
+                        }.headerProminence(.increased)
+                
+                            Button(action:{
+                                //do something
+                            }) {
+                                Text("Export Health Data")
+                            }.foregroundColor(.accentColor)
+                            
+                            Button(action:{
+                                //do something
+                            }) {
+                                Text("Log Out")
+                            }.foregroundColor(.accentColor)
+                        
+                         Button(action:{
+                                //do something
+                            }) {
+                                Text("Enter Debug Mode")
+                            }.foregroundColor(.red)
+                        
+                    }.shadow(radius: 4)
+    
+                    }.navigationBarTitle("")
+                    .navigationBarHidden(true)
+                    .navigationBarTitleDisplayMode(.inline)
+                }
         }
     }
 }

@@ -12,6 +12,7 @@ extension Observation
 {
     func CreateIOPObservation(mmHg: Int, patient: Patient)
     {
+        //Observation.quantity.value
         let quantity = Quantity();
         quantity.unit = "mmHg"
         quantity.value = FHIRDecimal(integerLiteral: mmHg)

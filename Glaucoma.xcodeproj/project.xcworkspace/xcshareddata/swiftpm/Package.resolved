@@ -1,25 +1,23 @@
 {
-  "object": {
-    "pins": [
-      {
-        "package": "OAuth2",
-        "repositoryURL": "https://github.com/p2/OAuth2.git",
-        "state": {
-          "branch": null,
-          "revision": "30f46ad74bcbe7013fb340e54f41bc9e6d2ce994",
-          "version": "5.3.2"
-        }
-      },
-      {
-        "package": "FHIR",
-        "repositoryURL": "https://github.com/smart-on-fhir/Swift-FHIR.git",
-        "state": {
-          "branch": null,
-          "revision": "b68fb5d6c8137de4a06894e683dc1a726a832907",
-          "version": "4.2.1"
-        }
+  "pins" : [
+    {
+      "identity" : "oauth2",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/p2/OAuth2.git",
+      "state" : {
+        "revision" : "30f46ad74bcbe7013fb340e54f41bc9e6d2ce994",
+        "version" : "5.3.2"
       }
-    ]
-  },
-  "version": 1
+    },
+    {
+      "identity" : "swift-fhir",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/smart-on-fhir/Swift-FHIR.git",
+      "state" : {
+        "revision" : "b68fb5d6c8137de4a06894e683dc1a726a832907",
+        "version" : "4.2.1"
+      }
+    }
+  ],
+  "version" : 2
 }

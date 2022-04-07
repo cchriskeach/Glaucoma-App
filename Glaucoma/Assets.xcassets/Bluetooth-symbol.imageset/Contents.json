@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "pngfind.com-bluetooth-png-2777665.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "pngfind.com-bluetooth-png-2777666.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "pngfind.com-bluetooth-png-2777667.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

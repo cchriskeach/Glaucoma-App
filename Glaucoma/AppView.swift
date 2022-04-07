@@ -8,31 +8,24 @@
 import SwiftUI
 
 struct AppView: View {
-    
-    init(){
-        UITabBar.appearance().isTranslucent = false
-        UITabBar.appearance().barTintColor = UIColor(Color(red: 23/255, green: 26/255, blue: 30/255))
-
-    }
-    
     var body: some View {
         TabView{
-            HomeView()
+            HomeView2()
                 .tabItem {
                     Image(systemName: "house")
                     Text("Home")
                 }
-            DataView()
+            DataView2()
                 .tabItem {
                     Image(systemName: "list.bullet")
                     Text("Data")
                 }
             SettingView()
                 .tabItem{
+                    Image(systemName: "gear")
                     Text("Settings")
                 }
-        }
-        .accentColor(Color(red: 59/255, green: 222/255, blue: 210/255))
+        }.accentColor(Color("AccentColor")).padding()
     }
 }
 struct AppView_Previews: PreviewProvider {
