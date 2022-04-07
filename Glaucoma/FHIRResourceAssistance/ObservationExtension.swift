@@ -12,7 +12,6 @@ extension Observation
 {
     func CreateIOPObservation(mmHg: Int, patient: Patient)
     {
-        //Observation.quantity.value
         let quantity = Quantity();
         quantity.unit = "mmHg"
         quantity.value = FHIRDecimal(integerLiteral: mmHg)
@@ -36,7 +35,9 @@ extension Observation
                 ]
             ]
         ])
-        let patientReference = try! Reference(json: ["reference" : "Patient/497"])
+        let patient = StaticMemory.getPatient()
+        let value = patient.id!
+        let patientReference = try! Reference(json: ["reference" : "Patient/\(value)"])
         self.subject = patientReference
         self.status = .final
     }

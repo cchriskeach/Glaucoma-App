@@ -12,7 +12,6 @@ extension Patient
 {
     func createPatient(firstName: String, lastName: String, dateOfBirth: Date, gender: String)
     {
-        //Patient.HumanName.family
         let humanName = HumanName()
         humanName.given = [FHIRString(firstName)]
         humanName.family = FHIRString(lastName)
@@ -20,7 +19,6 @@ extension Patient
         self.name = [humanName]
         self.birthDate = dateOfBirth.fhir_asDate()
         self.gender = AdministrativeGender(rawValue: gender)
-        
     }
     
     func getPatient() -> Patient

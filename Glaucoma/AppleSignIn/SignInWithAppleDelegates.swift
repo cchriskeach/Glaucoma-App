@@ -61,6 +61,7 @@ extension SignInWithAppleDelegates: ASAuthorizationControllerDelegate {
                                         identityToken: credential.identityToken,
                                         authorizationCode: credential.authorizationCode)
       self.signInSucceeded(success)
+        StaticMemory.InitializeUser(userID: credential.user as String)
     } catch {
       self.signInSucceeded(false)
     }
