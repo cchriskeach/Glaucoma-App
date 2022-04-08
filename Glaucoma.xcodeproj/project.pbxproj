@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,15 @@
 		6032D19B257D9B4000E66007 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6032D19A257D9B4000E66007 /* ContentView.swift */; };
 		6032D19D257D9B4800E66007 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6032D19C257D9B4800E66007 /* Assets.xcassets */; };
 		6032D1A0257D9B4800E66007 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6032D19F257D9B4800E66007 /* Preview Assets.xcassets */; };
+		604C883927FE8D9A006BD226 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604C883827FE8D9A006BD226 /* Date.swift */; };
+		60947C6727FB351200584BA3 /* BLEViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60947C6627FB351200584BA3 /* BLEViewModel.swift */; };
+		60947C6927FB35C600584BA3 /* BLEConnectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60947C6827FB35C600584BA3 /* BLEConnectView.swift */; };
+		60947C6C27FB3FBA00584BA3 /* HomeView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60947C6B27FB3FBA00584BA3 /* HomeView2.swift */; };
+		60947C6E27FB479E00584BA3 /* DataView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60947C6D27FB479E00584BA3 /* DataView2.swift */; };
+		60F1F74927FED5F100A84BDE /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 60F1F74827FED5F100A84BDE /* SwiftUICharts */; };
+		60F1F74D27FF574F00A84BDE /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F1F74C27FF574F00A84BDE /* HomeViewModel.swift */; };
+		60F1F74F27FF9A5F00A84BDE /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F1F74E27FF9A5F00A84BDE /* ViewExtension.swift */; };
+		60F1F75127FFA7E100A84BDE /* DataHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F1F75027FFA7E100A84BDE /* DataHandling.swift */; };
 		D6143AA127AF0D2500F273B4 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6143AA027AF0D2500F273B4 /* SettingView.swift */; };
 		D63819E827E63F7C004F2B5E /* SignInWithApple.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63819E627E63F7C004F2B5E /* SignInWithApple.swift */; };
 		D63819E927E63F7C004F2B5E /* SignInWithAppleDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63819E727E63F7C004F2B5E /* SignInWithAppleDelegates.swift */; };
@@ -28,7 +37,7 @@
 		D659A8A027D867C6006E5CA4 /* SMART.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D659A89327D866EE006E5CA4 /* SMART.framework */; };
 		D659A8A127D867C6006E5CA4 /* SMART.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D659A89327D866EE006E5CA4 /* SMART.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D659A8A527D868C6006E5CA4 /* GlaucomaFHIRServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D659A8A427D868C6006E5CA4 /* GlaucomaFHIRServer.swift */; };
-		D69BB3B027ED5F8100213289 /* StaticMemory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69BB3AC27ED5F8100213289 /* StaticMemory.swift */; };
+		D6994A2E27FFB1B00072C264 /* StaticMemory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6994A2A27FFB1AF0072C264 /* StaticMemory.swift */; };
 		D69DEF6127E6A9D7001F5F6D /* PatientExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69DEF6027E6A9D7001F5F6D /* PatientExtension.swift */; };
 		D69DEF6327E6AFCD001F5F6D /* ObservationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69DEF6227E6AFCD001F5F6D /* ObservationExtension.swift */; };
 /* End PBXBuildFile section */
@@ -96,6 +105,15 @@
 		6032D19C257D9B4800E66007 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6032D19F257D9B4800E66007 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6032D1A1257D9B4800E66007 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		604C883827FE8D9A006BD226 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		60947C6627FB351200584BA3 /* BLEViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEViewModel.swift; sourceTree = "<group>"; };
+		60947C6827FB35C600584BA3 /* BLEConnectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEConnectView.swift; sourceTree = "<group>"; };
+		60947C6B27FB3FBA00584BA3 /* HomeView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView2.swift; sourceTree = "<group>"; };
+		60947C6D27FB479E00584BA3 /* DataView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataView2.swift; sourceTree = "<group>"; };
+		60F1F74A27FED60D00A84BDE /* ChartView */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ChartView; sourceTree = "<group>"; };
+		60F1F74C27FF574F00A84BDE /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		60F1F74E27FF9A5F00A84BDE /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
+		60F1F75027FFA7E100A84BDE /* DataHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHandling.swift; sourceTree = "<group>"; };
 		D6143AA027AF0D2500F273B4 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		D63819E627E63F7C004F2B5E /* SignInWithApple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInWithApple.swift; sourceTree = "<group>"; };
 		D63819E727E63F7C004F2B5E /* SignInWithAppleDelegates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInWithAppleDelegates.swift; sourceTree = "<group>"; };
@@ -108,7 +126,7 @@
 		D63819F727E64BE3004F2B5E /* EnvironmentWindowKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnvironmentWindowKey.swift; sourceTree = "<group>"; };
 		D659A88B27D866EE006E5CA4 /* SwiftSMART.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftSMART.xcodeproj; path = "Swift-SMART/SwiftSMART.xcodeproj"; sourceTree = "<group>"; };
 		D659A8A427D868C6006E5CA4 /* GlaucomaFHIRServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlaucomaFHIRServer.swift; sourceTree = "<group>"; };
-		D69BB3AC27ED5F8100213289 /* StaticMemory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticMemory.swift; sourceTree = "<group>"; };
+		D6994A2A27FFB1AF0072C264 /* StaticMemory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StaticMemory.swift; path = Glaucoma/StaticMemory.swift; sourceTree = "<group>"; };
 		D69DEF5A27E6A716001F5F6D /* Glaucoma.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Glaucoma.entitlements; sourceTree = "<group>"; };
 		D69DEF6027E6A9D7001F5F6D /* PatientExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientExtension.swift; sourceTree = "<group>"; };
 		D69DEF6227E6AFCD001F5F6D /* ObservationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservationExtension.swift; sourceTree = "<group>"; };
@@ -120,6 +138,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D659A8A027D867C6006E5CA4 /* SMART.framework in Frameworks */,
+				60F1F74927FED5F100A84BDE /* SwiftUICharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,6 +148,7 @@
 		6032D18C257D9B4000E66007 = {
 			isa = PBXGroup;
 			children = (
+				D6994A2A27FFB1AF0072C264 /* StaticMemory.swift */,
 				6032D197257D9B4000E66007 /* Glaucoma */,
 				6032D196257D9B4000E66007 /* Products */,
 				D659A89C27D86776006E5CA4 /* Frameworks */,
@@ -146,16 +166,20 @@
 		6032D197257D9B4000E66007 /* Glaucoma */ = {
 			isa = PBXGroup;
 			children = (
+				60F1F74B27FF572F00A84BDE /* ViewModels */,
+				604C883427FE8D87006BD226 /* Models */,
+				60947C6A27FB3F9E00584BA3 /* UIRevamp */,
+				60947C6527FB34FA00584BA3 /* Bluetooth */,
 				D69DEF5A27E6A716001F5F6D /* Glaucoma.entitlements */,
 				D659A88B27D866EE006E5CA4 /* SwiftSMART.xcodeproj */,
 				6032D198257D9B4000E66007 /* GlaucomaApp.swift */,
-				D69BB3AC27ED5F8100213289 /* StaticMemory.swift */,
 				6032D19A257D9B4000E66007 /* ContentView.swift */,
 				601AD88725836D4B00A43234 /* AppView.swift */,
 				601AD88425836A2200A43234 /* HomeView.swift */,
 				D6143AA027AF0D2500F273B4 /* SettingView.swift */,
 				601AD88A25836D8A00A43234 /* DataView.swift */,
 				601AD8962583B45C00A43234 /* DataOne.swift */,
+				60F1F74A27FED60D00A84BDE /* ChartView */,
 				D69DEF5F27E6A90E001F5F6D /* FHIRResourceAssistance */,
 				D69DEF5E27E6A825001F5F6D /* AppleSignIn */,
 				D63819EB27E6427D004F2B5E /* CredentialStorage */,
@@ -172,6 +196,42 @@
 				6032D19F257D9B4800E66007 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		604C883427FE8D87006BD226 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				604C883827FE8D9A006BD226 /* Date.swift */,
+				60F1F74E27FF9A5F00A84BDE /* ViewExtension.swift */,
+				60F1F75027FFA7E100A84BDE /* DataHandling.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		60947C6527FB34FA00584BA3 /* Bluetooth */ = {
+			isa = PBXGroup;
+			children = (
+				60947C6627FB351200584BA3 /* BLEViewModel.swift */,
+				60947C6827FB35C600584BA3 /* BLEConnectView.swift */,
+			);
+			path = Bluetooth;
+			sourceTree = "<group>";
+		};
+		60947C6A27FB3F9E00584BA3 /* UIRevamp */ = {
+			isa = PBXGroup;
+			children = (
+				60947C6B27FB3FBA00584BA3 /* HomeView2.swift */,
+				60947C6D27FB479E00584BA3 /* DataView2.swift */,
+			);
+			path = UIRevamp;
+			sourceTree = "<group>";
+		};
+		60F1F74B27FF572F00A84BDE /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				60F1F74C27FF574F00A84BDE /* HomeViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		D659A88C27D866EE006E5CA4 /* Products */ = {
@@ -235,6 +295,9 @@
 				D659A89B27D8675F006E5CA4 /* PBXTargetDependency */,
 			);
 			name = Glaucoma;
+			packageProductDependencies = (
+				60F1F74827FED5F100A84BDE /* SwiftUICharts */,
+			);
 			productName = Glaucoma;
 			productReference = 6032D195257D9B4000E66007 /* Glaucoma.app */;
 			productType = "com.apple.product-type.application";
@@ -262,6 +325,9 @@
 				Base,
 			);
 			mainGroup = 6032D18C257D9B4000E66007;
+			packageReferences = (
+				60F1F74727FED5F100A84BDE /* XCRemoteSwiftPackageReference "ChartView" */,
+			);
 			productRefGroup = 6032D196257D9B4000E66007 /* Products */;
 			projectDirPath = "";
 			projectReferences = (
@@ -326,13 +392,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				604C883927FE8D9A006BD226 /* Date.swift in Sources */,
 				D63819F227E642BB004F2B5E /* UserData.swift in Sources */,
+				D6994A2E27FFB1B00072C264 /* StaticMemory.swift in Sources */,
 				D63819F827E64BE3004F2B5E /* EnvironmentWindowKey.swift in Sources */,
 				D63819E827E63F7C004F2B5E /* SignInWithApple.swift in Sources */,
-				D69BB3B027ED5F8100213289 /* StaticMemory.swift in Sources */,
+				60F1F75127FFA7E100A84BDE /* DataHandling.swift in Sources */,
+				60F1F74F27FF9A5F00A84BDE /* ViewExtension.swift in Sources */,
+				60947C6727FB351200584BA3 /* BLEViewModel.swift in Sources */,
 				601AD8972583B45C00A43234 /* DataOne.swift in Sources */,
 				601AD88825836D4B00A43234 /* AppView.swift in Sources */,
 				601AD88525836A2200A43234 /* HomeView.swift in Sources */,
+				60947C6927FB35C600584BA3 /* BLEConnectView.swift in Sources */,
 				D6143AA127AF0D2500F273B4 /* SettingView.swift in Sources */,
 				D69DEF6327E6AFCD001F5F6D /* ObservationExtension.swift in Sources */,
 				601AD88B25836D8A00A43234 /* DataView.swift in Sources */,
@@ -342,9 +413,12 @@
 				D63819F327E642BB004F2B5E /* UserDataKeychain.swift in Sources */,
 				D63819E927E63F7C004F2B5E /* SignInWithAppleDelegates.swift in Sources */,
 				6032D19B257D9B4000E66007 /* ContentView.swift in Sources */,
+				60947C6E27FB479E00584BA3 /* DataView2.swift in Sources */,
+				60F1F74D27FF574F00A84BDE /* HomeViewModel.swift in Sources */,
 				6032D199257D9B4000E66007 /* GlaucomaApp.swift in Sources */,
 				D63819F427E642BB004F2B5E /* Keychain.swift in Sources */,
 				D63819F627E642FD004F2B5E /* WebApi.swift in Sources */,
+				60947C6C27FB3FBA00584BA3 /* HomeView2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,7 +560,7 @@
 				DEVELOPMENT_TEAM = Q7AB7Y6B9Z;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Glaucoma/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -509,7 +583,7 @@
 				DEVELOPMENT_TEAM = Q7AB7Y6B9Z;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Glaucoma/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -543,6 +617,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		60F1F74727FED5F100A84BDE /* XCRemoteSwiftPackageReference "ChartView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppPear/ChartView";
+			requirement = {
+				kind = exactVersion;
+				version = "2.0.0-beta.2";
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		60F1F74827FED5F100A84BDE /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 60F1F74727FED5F100A84BDE /* XCRemoteSwiftPackageReference "ChartView" */;
+			productName = SwiftUICharts;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6032D18D257D9B4000E66007 /* Project object */;
 }
