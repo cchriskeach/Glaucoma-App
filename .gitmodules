@@ -1,3 +1,6 @@
 [submodule "Glaucoma/Glaucoma/Swift-SMART"]
 	path = Glaucoma/Glaucoma/Swift-SMART
 	url = git@github.com:smart-on-fhir/Swift-SMART.git
+[submodule "Swift-FHIR"]
+	path = Swift-FHIR
+	url = git@github.com:smart-on-fhir/Swift-FHIR.git
