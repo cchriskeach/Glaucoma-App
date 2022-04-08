@@ -34,65 +34,13 @@
 		D63819F427E642BB004F2B5E /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63819ED27E642BB004F2B5E /* Keychain.swift */; };
 		D63819F627E642FD004F2B5E /* WebApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63819F527E642FD004F2B5E /* WebApi.swift */; };
 		D63819F827E64BE3004F2B5E /* EnvironmentWindowKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63819F727E64BE3004F2B5E /* EnvironmentWindowKey.swift */; };
-		D659A8A027D867C6006E5CA4 /* SMART.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D659A89327D866EE006E5CA4 /* SMART.framework */; };
-		D659A8A127D867C6006E5CA4 /* SMART.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D659A89327D866EE006E5CA4 /* SMART.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D644E34927FFBA3000AE3191 /* Swift-FHIR in Resources */ = {isa = PBXBuildFile; fileRef = D644E34827FFBA3000AE3191 /* Swift-FHIR */; };
+		D644E34B27FFBA6400AE3191 /* FHIR in Frameworks */ = {isa = PBXBuildFile; productRef = D644E34A27FFBA6400AE3191 /* FHIR */; };
 		D659A8A527D868C6006E5CA4 /* GlaucomaFHIRServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D659A8A427D868C6006E5CA4 /* GlaucomaFHIRServer.swift */; };
 		D6994A2E27FFB1B00072C264 /* StaticMemory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6994A2A27FFB1AF0072C264 /* StaticMemory.swift */; };
 		D69DEF6127E6A9D7001F5F6D /* PatientExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69DEF6027E6A9D7001F5F6D /* PatientExtension.swift */; };
 		D69DEF6327E6AFCD001F5F6D /* ObservationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69DEF6227E6AFCD001F5F6D /* ObservationExtension.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		D659A89227D866EE006E5CA4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D659A88B27D866EE006E5CA4 /* SwiftSMART.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = EE43B1A919546D880017679A;
-			remoteInfo = "SwiftSMART-iOS";
-		};
-		D659A89427D866EE006E5CA4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D659A88B27D866EE006E5CA4 /* SwiftSMART.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = EE43B1B319546D880017679A;
-			remoteInfo = "SwiftSMART-iOSTests";
-		};
-		D659A89627D866EE006E5CA4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D659A88B27D866EE006E5CA4 /* SwiftSMART.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = EECAA7831A5D3DE60062C64B;
-			remoteInfo = "SwiftSMART-macOS";
-		};
-		D659A89827D866EE006E5CA4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D659A88B27D866EE006E5CA4 /* SwiftSMART.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = EE13AA921A5D44D100B901FD;
-			remoteInfo = "SwiftSMART-macOSTests";
-		};
-		D659A89A27D8675F006E5CA4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D659A88B27D866EE006E5CA4 /* SwiftSMART.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = EE43B1A819546D880017679A;
-			remoteInfo = "SwiftSMART-iOS";
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		D659A8A227D867C6006E5CA4 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				D659A8A127D867C6006E5CA4 /* SMART.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		601AD88425836A2200A43234 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -124,7 +72,7 @@
 		D63819F027E642BB004F2B5E /* UserDataKeychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataKeychain.swift; sourceTree = "<group>"; };
 		D63819F527E642FD004F2B5E /* WebApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebApi.swift; sourceTree = "<group>"; };
 		D63819F727E64BE3004F2B5E /* EnvironmentWindowKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnvironmentWindowKey.swift; sourceTree = "<group>"; };
-		D659A88B27D866EE006E5CA4 /* SwiftSMART.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftSMART.xcodeproj; path = "Swift-SMART/SwiftSMART.xcodeproj"; sourceTree = "<group>"; };
+		D644E34827FFBA3000AE3191 /* Swift-FHIR */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Swift-FHIR"; sourceTree = SOURCE_ROOT; };
 		D659A8A427D868C6006E5CA4 /* GlaucomaFHIRServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlaucomaFHIRServer.swift; sourceTree = "<group>"; };
 		D6994A2A27FFB1AF0072C264 /* StaticMemory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StaticMemory.swift; path = Glaucoma/StaticMemory.swift; sourceTree = "<group>"; };
 		D69DEF5A27E6A716001F5F6D /* Glaucoma.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Glaucoma.entitlements; sourceTree = "<group>"; };
@@ -137,8 +85,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D659A8A027D867C6006E5CA4 /* SMART.framework in Frameworks */,
 				60F1F74927FED5F100A84BDE /* SwiftUICharts in Frameworks */,
+				D644E34B27FFBA6400AE3191 /* FHIR in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,12 +119,12 @@
 				60947C6A27FB3F9E00584BA3 /* UIRevamp */,
 				60947C6527FB34FA00584BA3 /* Bluetooth */,
 				D69DEF5A27E6A716001F5F6D /* Glaucoma.entitlements */,
-				D659A88B27D866EE006E5CA4 /* SwiftSMART.xcodeproj */,
 				6032D198257D9B4000E66007 /* GlaucomaApp.swift */,
 				6032D19A257D9B4000E66007 /* ContentView.swift */,
 				601AD88725836D4B00A43234 /* AppView.swift */,
 				601AD88425836A2200A43234 /* HomeView.swift */,
 				D6143AA027AF0D2500F273B4 /* SettingView.swift */,
+				D644E34827FFBA3000AE3191 /* Swift-FHIR */,
 				601AD88A25836D8A00A43234 /* DataView.swift */,
 				601AD8962583B45C00A43234 /* DataOne.swift */,
 				60F1F74A27FED60D00A84BDE /* ChartView */,
@@ -234,17 +182,6 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		D659A88C27D866EE006E5CA4 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				D659A89327D866EE006E5CA4 /* SMART.framework */,
-				D659A89527D866EE006E5CA4 /* SwiftSMART-iOSTests.xctest */,
-				D659A89727D866EE006E5CA4 /* SMART.framework */,
-				D659A89927D866EE006E5CA4 /* SwiftSMART-macOSTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		D659A89C27D86776006E5CA4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -287,16 +224,15 @@
 				6032D191257D9B4000E66007 /* Sources */,
 				6032D192257D9B4000E66007 /* Frameworks */,
 				6032D193257D9B4000E66007 /* Resources */,
-				D659A8A227D867C6006E5CA4 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				D659A89B27D8675F006E5CA4 /* PBXTargetDependency */,
 			);
 			name = Glaucoma;
 			packageProductDependencies = (
 				60F1F74827FED5F100A84BDE /* SwiftUICharts */,
+				D644E34A27FFBA6400AE3191 /* FHIR */,
 			);
 			productName = Glaucoma;
 			productReference = 6032D195257D9B4000E66007 /* Glaucoma.app */;
@@ -330,12 +266,6 @@
 			);
 			productRefGroup = 6032D196257D9B4000E66007 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = D659A88C27D866EE006E5CA4 /* Products */;
-					ProjectRef = D659A88B27D866EE006E5CA4 /* SwiftSMART.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				6032D194257D9B4000E66007 /* Glaucoma */,
@@ -343,43 +273,13 @@
 		};
 /* End PBXProject section */
 
-/* Begin PBXReferenceProxy section */
-		D659A89327D866EE006E5CA4 /* SMART.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = SMART.framework;
-			remoteRef = D659A89227D866EE006E5CA4 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		D659A89527D866EE006E5CA4 /* SwiftSMART-iOSTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "SwiftSMART-iOSTests.xctest";
-			remoteRef = D659A89427D866EE006E5CA4 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		D659A89727D866EE006E5CA4 /* SMART.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = SMART.framework;
-			remoteRef = D659A89627D866EE006E5CA4 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		D659A89927D866EE006E5CA4 /* SwiftSMART-macOSTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "SwiftSMART-macOSTests.xctest";
-			remoteRef = D659A89827D866EE006E5CA4 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
-
 /* Begin PBXResourcesBuildPhase section */
 		6032D193257D9B4000E66007 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				6032D1A0257D9B4800E66007 /* Preview Assets.xcassets in Resources */,
+				D644E34927FFBA3000AE3191 /* Swift-FHIR in Resources */,
 				D63819EC27E6427D004F2B5E /* CredentialStorage in Resources */,
 				6032D19D257D9B4800E66007 /* Assets.xcassets in Resources */,
 			);
@@ -423,14 +323,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		D659A89B27D8675F006E5CA4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "SwiftSMART-iOS";
-			targetProxy = D659A89A27D8675F006E5CA4 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		6032D1A2257D9B4800E66007 /* Debug */ = {
@@ -634,6 +526,10 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 60F1F74727FED5F100A84BDE /* XCRemoteSwiftPackageReference "ChartView" */;
 			productName = SwiftUICharts;
+		};
+		D644E34A27FFBA6400AE3191 /* FHIR */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FHIR;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
