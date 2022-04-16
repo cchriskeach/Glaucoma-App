@@ -61,7 +61,6 @@ extension SignInWithAppleDelegates: ASAuthorizationControllerDelegate {
                                         identityToken: credential.identityToken,
                                         authorizationCode: credential.authorizationCode)
       self.signInSucceeded(success)
-        StaticMemory.InitializeUser(userID: credential.user as String)
     } catch {
       self.signInSucceeded(false)
     }
@@ -95,7 +94,12 @@ extension SignInWithAppleDelegates: ASAuthorizationControllerDelegate {
       } else {
         signInWithExistingAccount(credential: appleIdCredential)
       }
-
+        StaticMemory.InitializeUser(userID: appleIdCredential.user as String)
+        while StaticMemory.isUserInit == false
+        {
+            /* Busy wait until we have an initilized user, should only take a few seconds */
+        }
+        StaticMemory.getPatientObservations()
       break
       
     case let passwordCredential as ASPasswordCredential:

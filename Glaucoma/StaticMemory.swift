@@ -13,38 +13,79 @@ import CryptoKit
 class StaticMemory
 {
     static var patient = Patient();
-    static var userIdentifier:String = "test@email"
+    static var userIdentifier:String = "test3@email"
     static var userHash = ""
     static var isUserInit = false;
     static var server: GlaucomaFHIRServer = GlaucomaFHIRServer(baseURL: URL(string: "http://34.125.229.199:32783/fhir/r4/")!)
+    //http://localhost:32783/fhir/r4/Observation/2889
     // http://34.125.229.199:32783/fhir/r4/metadata
     // http://34.125.229.199:32783/fhir/r4/Patient/1983
     static var observations: [Observation] = [];
     static var observationCount = 0;
+    static var srch:FHIRSearch = Observation.search(["patient" : "0"]);
     
     //http://localhost:32783/fhir/r4/Observation?_sort=date&category=vital-signs&patient=2442
     public static func getPatientObservations()
     {
+        //Get patient information for search
         let patient = StaticMemory.getPatient()
         let patientId = patient.id!
-        print(patientId)
-        let srch = Observation.search(["patient" : "\(patientId)"] )
+        //Clear local observation list
+        observations.removeAll()
+        srch = Observation.search(["patient" : "\(patientId)"])
+
         srch.perform(server) { (bundle, error) in
-            print(error);
-            
             var i = bundle?.entry?.count
-            while i! > 0 {
-                if let bundleEntry = bundle?.entry?.removeFirst(),
-                    let observation = bundleEntry.resource as? Observation {
-                    observations.append(observation);
-                } else {
-                    
+            if i != nil
+            {
+                while i! > 0 {
+                    if let bundleEntry = bundle?.entry?.removeFirst(),
+                        let observation = bundleEntry.resource as? Observation {
+                        observations.append(observation);
+                    } else {
+                        /* Out of entries, nothing to do */
+                    }
+                    i = i! - 1;
                 }
-                i = i! - 1;
+                StaticMemory.getNextPageOfObservations()
             }
         }
         return;
     }
+    
+    public static func getNextPageOfObservations() -> Void
+    {
+        srch.nextPage(server) { (bundle, error) in
+            if bundle == nil && error == nil
+            {
+                /* bundle and error are nil, no more pages found */
+            }
+            else if bundle == nil
+            {
+                /* No bundle returned, something went wrong */
+            }
+            else if error == nil
+            {
+                /* No Errors, execution is safe */
+                var i = bundle?.entry?.count
+                if i != nil
+                {
+                    
+                    while i! > 0 {
+                        if let bundleEntry = bundle?.entry?.removeFirst(),
+                            let observation = bundleEntry.resource as? Observation {
+                            observations.append(observation);
+                        } else {
+                            /* Call complete, you can move onto the next one */
+                        }
+                        i = i! - 1;
+                    }
+                }
+                StaticMemory.getNextPageOfObservations();
+            }
+        }
+    }
+    
     public static func printObservations() -> Void
     {
         var i = 0;
@@ -80,9 +121,9 @@ class StaticMemory
     {
         var valueToReturn = false;
         patient._server = server;
-        print("Deleteing Patient: \(patient.id)")
+        print("Deleteing Patient: \(String(describing: patient.id))")
         patient.delete(callback: { (error) in
-            if error != nil {
+            if error == nil {
                 valueToReturn = true
             }
             else
@@ -90,6 +131,21 @@ class StaticMemory
                 valueToReturn = false
             }
         })
+        return valueToReturn
+    }
+    public static func deleteAllLocalObservations() -> Bool
+    {
+        var valueToReturn = false;
+        patient._server = server;
+        for observation in observations {
+            let thingId = observation.id!
+            print("Deleteing Observation: \(thingId)")
+            observation.delete(callback: { (error) in
+                if error != nil {
+                    valueToReturn = false
+                }
+            })
+        }
         return valueToReturn
     }
     
@@ -279,29 +335,3 @@ class StaticMemory
     }
     
 }
-
-
-//        How to get private and public key
-//        let privateKey:SecKey = try getEncryptionKey(email:patientEmail)
-//        let publicKey = SecKeyCopyPublicKey(privateKey)
-//        let algorithm: SecKeyAlgorithm = .rsaEncryptionOAEPSHA512
-//
-//        let dataToEncrypt = patientEmail;
-//        var error: Unmanaged<CFError>?
-//        guard let cipherText = SecKeyCreateEncryptedData(publicKey!,
-//                                                         algorithm,
-//                                                         dataToEncrypt.data(using: .utf8)! as CFData,
-//                                                         &error) as Data? else {
-//                                                            throw error!.takeRetainedValue() as Error
-//        }
-//
-//        guard let clearText = SecKeyCreateDecryptedData(privateKey,
-//                                                        algorithm,
-//                                                        cipherText as CFData,
-//                                                        &error) as Data? else {
-//                                                            throw error!.takeRetainedValue() as Error
-//        }
-//
-//        let cypher = String(decoding: cipherText, as: UTF8.self)
-//        let decryptedData = String(decoding: clearText, as: UTF8.self)
-//        print("Cypher: \(cypher)")

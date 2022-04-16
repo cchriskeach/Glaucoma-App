@@ -11,16 +11,10 @@ import Models
 struct SpencerView: View {
     var body: some View {
         HStack(alignment: .top, spacing: 20) {
-            Button("Initialize User") {
-                //Example of test code:
-                
-                //1 Establish Server Connection can be established mulitple times
-                StaticMemory.InitializeUser()
-            }
             Button("Send Random Data") {
                 let server = StaticMemory.getServer()
                 //Example of test code:
-                for i in 1...50 {
+                for i in 1...200 {
                     print(i)
                     let observation = Observation();
                     observation.CreateIOPObservation(mmHg: i, patient: StaticMemory.getPatient())
@@ -36,12 +30,13 @@ struct SpencerView: View {
             Button("Delete") {
                 StaticMemory.deletePatientForever()
             }
-            Button("Get Observations") {
-                StaticMemory.getPatientObservations()
-            }
             Button("Print Observations")
             {
                 StaticMemory.printObservations()
+            }
+            Button("Delete All Observatios")
+            {
+                StaticMemory.deleteAllLocalObservations();
             }
         }
     }
