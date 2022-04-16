@@ -27,7 +27,6 @@
 		D6143AA127AF0D2500F273B4 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6143AA027AF0D2500F273B4 /* SettingView.swift */; };
 		D63819E827E63F7C004F2B5E /* SignInWithApple.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63819E627E63F7C004F2B5E /* SignInWithApple.swift */; };
 		D63819E927E63F7C004F2B5E /* SignInWithAppleDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63819E727E63F7C004F2B5E /* SignInWithAppleDelegates.swift */; };
-		D63819EC27E6427D004F2B5E /* CredentialStorage in Resources */ = {isa = PBXBuildFile; fileRef = D63819EB27E6427D004F2B5E /* CredentialStorage */; };
 		D63819F127E642BB004F2B5E /* SharedWebCredential.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63819EF27E642BB004F2B5E /* SharedWebCredential.swift */; };
 		D63819F227E642BB004F2B5E /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63819EE27E642BB004F2B5E /* UserData.swift */; };
 		D63819F327E642BB004F2B5E /* UserDataKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63819F027E642BB004F2B5E /* UserDataKeychain.swift */; };
@@ -65,7 +64,6 @@
 		D6143AA027AF0D2500F273B4 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		D63819E627E63F7C004F2B5E /* SignInWithApple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInWithApple.swift; sourceTree = "<group>"; };
 		D63819E727E63F7C004F2B5E /* SignInWithAppleDelegates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInWithAppleDelegates.swift; sourceTree = "<group>"; };
-		D63819EB27E6427D004F2B5E /* CredentialStorage */ = {isa = PBXFileReference; lastKnownFileType = folder; path = CredentialStorage; sourceTree = "<group>"; };
 		D63819ED27E642BB004F2B5E /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		D63819EE27E642BB004F2B5E /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		D63819EF27E642BB004F2B5E /* SharedWebCredential.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedWebCredential.swift; sourceTree = "<group>"; };
@@ -130,7 +128,6 @@
 				60F1F74A27FED60D00A84BDE /* ChartView */,
 				D69DEF5F27E6A90E001F5F6D /* FHIRResourceAssistance */,
 				D69DEF5E27E6A825001F5F6D /* AppleSignIn */,
-				D63819EB27E6427D004F2B5E /* CredentialStorage */,
 				6032D19C257D9B4800E66007 /* Assets.xcassets */,
 				6032D1A1257D9B4800E66007 /* Info.plist */,
 				6032D19E257D9B4800E66007 /* Preview Content */,
@@ -280,7 +277,6 @@
 			files = (
 				6032D1A0257D9B4800E66007 /* Preview Assets.xcassets in Resources */,
 				D644E34927FFBA3000AE3191 /* Swift-FHIR in Resources */,
-				D63819EC27E6427D004F2B5E /* CredentialStorage in Resources */,
 				6032D19D257D9B4800E66007 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
