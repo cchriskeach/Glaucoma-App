@@ -13,12 +13,12 @@ import CryptoKit
 class StaticMemory
 {
     static var patient = Patient();
-    static var userIdentifier:String = "spencer.sullivan2013@gmail.coma"
+    static var userIdentifier:String = "test@email"
     static var userHash = ""
     static var isUserInit = false;
     static var server: GlaucomaFHIRServer = GlaucomaFHIRServer(baseURL: URL(string: "http://34.125.229.199:32783/fhir/r4/")!)
     // http://34.125.229.199:32783/fhir/r4/metadata
-    // http://34.125.229.199:32783/fhir/r4/Patient/1
+    // http://34.125.229.199:32783/fhir/r4/Patient/1983
     static var observations: [Observation] = [];
     static var observationCount = 0;
     
