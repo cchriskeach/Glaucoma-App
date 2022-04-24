@@ -32,6 +32,10 @@ class StaticMemory
     static var srch:FHIRSearch = Observation.search(["patient" : "0"]);
     
     //http://localhost:32783/fhir/r4/Observation?_sort=date&category=vital-signs&patient=2442
+    public static func getObservations() -> Array<Observation>
+    {
+        return observations;
+    }
     
     public static func getPatient() -> Patient
     {
@@ -273,10 +277,10 @@ class StaticMemory
     {
         
         for observation in observations{
-            let obvValue = observation.valueQuantity?.value!
+            let obvValue = observation.getValue()
             let obvId = observation.id!
             let dateTime = observation.effectiveDateTime!;
-            print("\(obvValue ?? -1) + \(obvId) + \(dateTime)")
+            print("\(obvValue) + \(obvId) + \(dateTime)")
         }
         print("Observation Count = \(observations.count)")
     }

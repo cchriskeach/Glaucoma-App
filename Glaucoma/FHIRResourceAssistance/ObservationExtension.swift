@@ -51,11 +51,16 @@ extension Observation
         self.effectiveDateTime = observationDateTime
         self.status = .final
     }
+    func getValue() -> Int
+    {
+        return Int("\(self.valueQuantity?.value! ?? -1)")!
+    }
     
     func getDateTime() -> DateTime
     {
         return self.effectiveDateTime!
     }
+    
     func getDate() -> Date
     {
         let isoDate = "\(self.effectiveDateTime!)"
