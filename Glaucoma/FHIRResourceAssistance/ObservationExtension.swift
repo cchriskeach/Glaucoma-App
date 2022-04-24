@@ -44,15 +44,27 @@ extension Observation
         let minutes = (Calendar.current.component(.minute, from: today))
         let seconds = (Calendar.current.component(.second, from: today))
         let hoursInt = UInt8("\(hours)")!;
-        print("\(hoursInt) + \(minutes)")
         let observationTime = FHIRTime(hour: UInt8("\(hours)")!, minute: UInt8("\(minutes)")!, second: 0)
         let timeZone = TimeZone(abbreviation: "EST");
         let fiDate = FHIRDate(string: "\(today)")!;
         let observationDateTime = DateTime(date: fiDate, time: observationTime, timeZone: timeZone)
-        print(observationDateTime)
         self.effectiveDateTime = observationDateTime
         self.status = .final
     }
+    
+    func getDateTime() -> DateTime
+    {
+        return self.effectiveDateTime!
+    }
+    func getDate() -> Date
+    {
+        let isoDate = "\(self.effectiveDateTime!)"
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        return dateFormatter.date(from: isoDate)!
+    }
+    
 }
 
 

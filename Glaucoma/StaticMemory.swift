@@ -275,8 +275,8 @@ class StaticMemory
         for observation in observations{
             let obvValue = observation.valueQuantity?.value!
             let obvId = observation.id!
-            let dateTime = observation.effectiveDateTime;
-            print("\(obvValue ?? -1) + \(obvId) + \(dateTime?.date) + \(dateTime?.time)")
+            let dateTime = observation.effectiveDateTime!;
+            print("\(obvValue ?? -1) + \(obvId) + \(dateTime)")
         }
         print("Observation Count = \(observations.count)")
     }
