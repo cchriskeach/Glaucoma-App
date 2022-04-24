@@ -38,6 +38,10 @@ struct SpencerView: View {
             {
                 _ = StaticMemory.deleteAllLocalObservations();
             }
+            Button("Get All Observatios")
+            {
+                _ = StaticMemory.getPatientObservations();
+            }
         }
     }
 }

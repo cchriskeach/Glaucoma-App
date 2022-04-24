@@ -46,9 +46,10 @@ extension Observation
         let hoursInt = UInt8("\(hours)")!;
         print("\(hoursInt) + \(minutes)")
         let observationTime = FHIRTime(hour: UInt8("\(hours)")!, minute: UInt8("\(minutes)")!, second: 0)
-        let timeZone = TimeZone(identifier: "EST");
+        let timeZone = TimeZone(abbreviation: "EST");
         let fiDate = FHIRDate(string: "\(today)")!;
         let observationDateTime = DateTime(date: fiDate, time: observationTime, timeZone: timeZone)
+        print(observationDateTime)
         self.effectiveDateTime = observationDateTime
         self.status = .final
     }

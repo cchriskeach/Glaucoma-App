@@ -20,7 +20,7 @@ import CryptoKit
 class StaticMemory
 {
     static var patient = Patient();
-    static var userIdentifier:String = "test3@email"
+    static var userIdentifier:String = "test5@email"
     static var userHash = ""
     static var isUserInit = false;
     static var server: GlaucomaFHIRServer = GlaucomaFHIRServer(baseURL: URL(string: "http://34.125.229.199:32783/fhir/r4/")!)
