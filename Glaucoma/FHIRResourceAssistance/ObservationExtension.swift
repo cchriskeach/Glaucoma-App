@@ -39,6 +39,17 @@ extension Observation
         let value = patient.id!
         let patientReference = try! Reference(json: ["reference" : "Patient/\(value)"])
         self.subject = patientReference
+        let today = Date()
+        let hours   = (Calendar.current.component(.hour, from: today))
+        let minutes = (Calendar.current.component(.minute, from: today))
+        let seconds = (Calendar.current.component(.second, from: today))
+        let hoursInt = UInt8("\(hours)")!;
+        print("\(hoursInt) + \(minutes)")
+        let observationTime = FHIRTime(hour: UInt8("\(hours)")!, minute: UInt8("\(minutes)")!, second: 0)
+        let timeZone = TimeZone(identifier: "EST");
+        let fiDate = FHIRDate(string: "\(today)")!;
+        let observationDateTime = DateTime(date: fiDate, time: observationTime, timeZone: timeZone)
+        self.effectiveDateTime = observationDateTime
         self.status = .final
     }
 }

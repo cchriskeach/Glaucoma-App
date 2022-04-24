@@ -2,9 +2,16 @@
 //  StaticMemory.swift
 //  SwiftSMART
 //
-//  Created by SpencerSullivan on 3/24/22.
-//  Copyright © 2022 SMART Health IT. All rights reserved.
+//  Created by Spencer Sullivan on 3/24/22.
 //
+// Purpose of this file:
+/*
+     The purpose of this file is to have an area for the storage and processing of all global like data. It is named StaticMemory because everything in there will be stored in a static context. By putting all of this in it's own object it makes using global data safer and easier to track in a multithreaded application.
+     
+     All static variables should be private and only be accessed by mutating functions
+     
+     While not necessary, it is easier for readablity if static variables are accessed via StaticMemory.\(someVariableName)
+ */
 
 import Foundation
 import FHIR
@@ -17,7 +24,7 @@ class StaticMemory
     static var userHash = ""
     static var isUserInit = false;
     static var server: GlaucomaFHIRServer = GlaucomaFHIRServer(baseURL: URL(string: "http://34.125.229.199:32783/fhir/r4/")!)
-    //http://localhost:32783/fhir/r4/Observation/2889
+    //http://34.125.229.199:32783/fhir/r4/Observation/2889
     // http://34.125.229.199:32783/fhir/r4/metadata
     // http://34.125.229.199:32783/fhir/r4/Patient/1983
     static var observations: [Observation] = [];
@@ -25,139 +32,45 @@ class StaticMemory
     static var srch:FHIRSearch = Observation.search(["patient" : "0"]);
     
     //http://localhost:32783/fhir/r4/Observation?_sort=date&category=vital-signs&patient=2442
-    public static func getPatientObservations()
-    {
-        //Get patient information for search
-        let patient = StaticMemory.getPatient()
-        let patientId = patient.id!
-        //Clear local observation list
-        observations.removeAll()
-        srch = Observation.search(["patient" : "\(patientId)"])
-
-        srch.perform(server) { (bundle, error) in
-            var i = bundle?.entry?.count
-            if i != nil
-            {
-                while i! > 0 {
-                    if let bundleEntry = bundle?.entry?.removeFirst(),
-                        let observation = bundleEntry.resource as? Observation {
-                        observations.append(observation);
-                    } else {
-                        /* Out of entries, nothing to do */
-                    }
-                    i = i! - 1;
-                }
-                StaticMemory.getNextPageOfObservations()
-            }
-        }
-        return;
-    }
-    
-    public static func getNextPageOfObservations() -> Void
-    {
-        srch.nextPage(server) { (bundle, error) in
-            if bundle == nil && error == nil
-            {
-                /* bundle and error are nil, no more pages found */
-            }
-            else if bundle == nil
-            {
-                /* No bundle returned, something went wrong */
-            }
-            else if error == nil
-            {
-                /* No Errors, execution is safe */
-                var i = bundle?.entry?.count
-                if i != nil
-                {
-                    
-                    while i! > 0 {
-                        if let bundleEntry = bundle?.entry?.removeFirst(),
-                            let observation = bundleEntry.resource as? Observation {
-                            observations.append(observation);
-                        } else {
-                            /* Call complete, you can move onto the next one */
-                        }
-                        i = i! - 1;
-                    }
-                }
-                StaticMemory.getNextPageOfObservations();
-            }
-        }
-    }
-    
-    public static func printObservations() -> Void
-    {
-        var i = 0;
-        for observation in observations{
-            let thing = observation.valueQuantity?.value!
-            let thingId = observation.id!
-            print("\(thing) + \(thingId)")
-            i+=1;
-        }
-        print(i)
-    }
     
     public static func getPatient() -> Patient
     {
-        return patient;
+        return StaticMemory.patient;
     }
     public static func getServer() -> GlaucomaFHIRServer
     {
-        return server
+        return StaticMemory.server
     }
     
-    public static func setInitalizedUser(newPatient: Patient) -> Void
+    private static func setInitalizedUser(newPatient: Patient) -> Void
     {
         isUserInit = true;
-        patient = newPatient;
+        StaticMemory.patient = newPatient;
     }
     public static func isUserInitalized() -> Bool
     {
         return isUserInit;
     }
-    
-    public static func deletePatientForever() -> Bool
+    public static func getUserHash() -> String
     {
-        var valueToReturn = false;
-        patient._server = server;
-        print("Deleteing Patient: \(String(describing: patient.id))")
-        patient.delete(callback: { (error) in
-            if error == nil {
-                valueToReturn = true
-            }
-            else
-            {
-                valueToReturn = false
-            }
-        })
-        return valueToReturn
+        return userHash;
     }
-    public static func deleteAllLocalObservations() -> Bool
-    {
-        var valueToReturn = false;
-        patient._server = server;
-        for observation in observations {
-            let thingId = observation.id!
-            print("Deleteing Observation: \(thingId)")
-            observation.delete(callback: { (error) in
-                if error != nil {
-                    valueToReturn = false
-                }
-            })
-        }
-        return valueToReturn
-    }
-    
     private static func setUserIdentifier(userIdentifier: String)
     {
         self.userIdentifier = userIdentifier
     }
     
+    /* -------------------------------------------------------------------------------------------------- */
+    //MARK: Patient-Server Funcs
+    /* -------------------------------------------------------------------------------------------------- */
+    
+    //Initialize User functions are used to either A get the User data from the server or B create a user and then write that to the server.
+    
+    //For use when the user logs in, based on Apple ID
     public static func InitializeUser(userID: String) -> Void
     {
         setUserIdentifier(userIdentifier: userID)
-        StaticMemory.createSecurePatient()
+        _ = StaticMemory.createSecurePatient()
         StaticMemory.syncPatient() { (patient,error) in
             if error == nil {
                 isUserInit = true
@@ -170,9 +83,10 @@ class StaticMemory
         }
     }
     
+    //For use when the user does not log in, this will access or create the default account based on the default value of StaticMemory.userIdentifier
     public static func InitializeUser() -> Void
     {
-        StaticMemory.createSecurePatient()
+        _ = StaticMemory.createSecurePatient()
         StaticMemory.syncPatient() { (patient,error) in
             if error == nil {
                 isUserInit = true
@@ -185,10 +99,10 @@ class StaticMemory
         }
     }
     
-    //creates a patient profile that can be used to acquire the patient on the server
+    //creates a patient profile that can be used to acquire the patient on the server, don't trust the name, this isn't secure
     private static func createSecurePatient() -> Patient
     {
-        
+        //This should not be stored in the code in the future, more security things will need to be implemented
         let salt:String =
         """
         WRwPPo+ul2g+hMLLozyLA0MLDwI2NcW+6z8Ah3Cmg1qKTuxJS+0ecPIGaa4gS0MD
@@ -219,11 +133,7 @@ class StaticMemory
         return patient
     }
     
-    static func getUserHash() -> String
-    {
-        return userHash;
-    }
-    
+    //Searches for the patient by last name, which in our case is the patient hash
     private static func getPatientByName(completion: @escaping (Patient?, Error?) -> Void ) {
         // search patient on the fhir repository by family name
         Patient.search(["family": "\(StaticMemory.getUserHash())"]).perform(StaticMemory.server) { (bundle, error) in
@@ -268,70 +178,125 @@ class StaticMemory
                 StaticMemory.setInitalizedUser(newPatient: patient!)
                 completion(patient,error)
             }
-            
         }
-        
     }
     
-    //1 check to see if there is a key generated with the proper tag
-    //if not, generate a key, this is likely the first time the user is logging in, this key will then be stored in their keychain
-    
-    static func getEncryptionKey(email: String) throws -> SecKey
+    //Deletes the patient data on the server and all observations that are stored locally
+    public static func deletePatientForever() -> Bool
     {
-        let tag = "\(email).Glaucoma.keys.mykey".data(using: .utf8)!
-        let attributes: [String: Any] =
-            [kSecAttrKeyType as String:            kSecAttrKeyTypeRSA,
-             kSecAttrKeySizeInBits as String:      2048,
-             kSecPrivateKeyAttrs as String:
-                [kSecAttrIsPermanent as String:    true,
-                 kSecAttrApplicationTag as String: tag]
-        ]
-        
-        //generate query for getting a key if one has already been generated.
-        let getquery: [String: Any] = [kSecClass as String: kSecClassKey,
-                                       kSecAttrApplicationTag as String: tag,
-                                       kSecAttrKeyType as String: kSecAttrKeyTypeRSA,
-                                       kSecReturnRef as String: true]
-        
-        
-        //execute query to see if that key existed
-        var item: CFTypeRef?
-        let status = SecItemCopyMatching(getquery as CFDictionary, &item)
-        if(status == errSecSuccess)
-        {
-            // no error, do nothing
-        }
-        else
-        {
-            // There was an error, key must not exist, create the key.
-            var error: Unmanaged<CFError>?
-            guard SecKeyCreateRandomKey(attributes as CFDictionary, &error) != nil else {
-                throw error!.takeRetainedValue() as Error
-            }
-            
-            //key now exists, go get the key
-            let status = SecItemCopyMatching(getquery as CFDictionary, &item)
-            if (status == errSecSuccess)
-            {
-                
+        var valueToReturn = false;
+        patient._server = server;
+        print("Deleteing Patient: \(String(describing: patient.id))")
+        patient.delete(callback: { (error) in
+            if error == nil {
+                valueToReturn = true
             }
             else
             {
-                print("ERROR")
-                throw EncryptionError.empty
-                
+                valueToReturn = false
+            }
+        })
+        StaticMemory.deleteAllLocalObservations();
+        return valueToReturn
+    }
+    
+    /* -------------------------------------------------------------------------------------------------- */
+    //MARK: Observation-Server Funcs
+    /* -------------------------------------------------------------------------------------------------- */
+    
+    public static func getPatientObservations()
+    {
+        //Get patient information for search
+        let patient = StaticMemory.getPatient()
+        let patientId = patient.id!
+        
+        //Clear local observation list
+        observations.removeAll()
+        srch = Observation.search(["patient" : "\(patientId)"])
+
+        srch.perform(server) { (bundle, error) in
+            var i = bundle?.entry?.count
+            if i != nil
+            {
+                while i! > 0 {
+                    if let bundleEntry = bundle?.entry?.removeFirst(),
+                        let observation = bundleEntry.resource as? Observation {
+                        observations.append(observation);
+                    } else {
+                        /* Out of entries, nothing to do */
+                    }
+                    i = i! - 1;
+                }
+                StaticMemory.getNextPageOfObservations()
             }
         }
-        
-        let patientPrivateKey = item as! SecKey
-        
-        // return key, use it to generate a fake, yet repeatable patient name
-        return patientPrivateKey
+        return;
     }
     
-    enum EncryptionError: Error {
-        case empty
-        case short
+    private static func getNextPageOfObservations() -> Void
+    {
+        srch.nextPage(server) { (bundle, error) in
+            if bundle == nil && error == nil
+            {
+                /* bundle and error are nil, no more pages found */
+            }
+            else if bundle == nil
+            {
+                /* No bundle returned, something went wrong */
+            }
+            else if error == nil
+            {
+                /* No Errors, execution is safe */
+                var i = bundle?.entry?.count
+                if i != nil
+                {
+                    
+                    while i! > 0 {
+                        if let bundleEntry = bundle?.entry?.removeFirst(),
+                            let observation = bundleEntry.resource as? Observation {
+                            observations.append(observation);
+                        } else {
+                            /* Call complete, you can move onto the next one */
+                        }
+                        i = i! - 1;
+                    }
+                }
+                //Recursive call to get the next page, this call must be within the nextPage closure so that the calls are serial
+                StaticMemory.getNextPageOfObservations();
+            }
+        }
     }
     
+    //loops through observations at prints out their values and Id's
+    //FHIR Objects are finickey when printing
+    public static func printObservations() -> Void
+    {
+        
+        for observation in observations{
+            let obvValue = observation.valueQuantity?.value!
+            let obvId = observation.id!
+            let dateTime = observation.effectiveDateTime;
+            print("\(obvValue ?? -1) + \(obvId) + \(dateTime?.date) + \(dateTime?.time)")
+        }
+        print("Observation Count = \(observations.count)")
+    }
+    
+    //Takes all the observations that are currently loaded in the device and asks the server to delete them.
+    public static func deleteAllLocalObservations() -> Bool
+    {
+        var valueToReturn = false;
+        patient._server = server;
+        
+        for observation in observations {
+            let thingId = observation.id!
+            print("Deleteing Observation: \(thingId)")
+            observation.delete(callback: { (error) in
+                if error != nil {
+                    valueToReturn = false
+                }
+            })
+        }
+        observations.removeAll()
+        return valueToReturn
+    }
 }
