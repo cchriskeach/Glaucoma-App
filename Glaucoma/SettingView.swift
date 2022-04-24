@@ -28,7 +28,7 @@ struct SpencerView: View {
                 }
             }
             Button("Delete") {
-                StaticMemory.deletePatientForever()
+                _ = StaticMemory.deletePatientForever()
             }
             Button("Print Observations")
             {
@@ -36,7 +36,11 @@ struct SpencerView: View {
             }
             Button("Delete All Observatios")
             {
-                StaticMemory.deleteAllLocalObservations();
+                _ = StaticMemory.deleteAllLocalObservations();
+            }
+            Button("Get All Observatios")
+            {
+                _ = StaticMemory.getPatientObservations();
             }
         }
     }
