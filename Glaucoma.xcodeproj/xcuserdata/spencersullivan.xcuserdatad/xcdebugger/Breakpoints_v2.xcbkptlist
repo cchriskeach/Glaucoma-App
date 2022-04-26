@@ -142,8 +142,8 @@
             filePath = "Glaucoma/StaticMemory.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "214"
-            endingLineNumber = "214"
+            startingLineNumber = "265"
+            endingLineNumber = "265"
             landmarkName = "getPatientObservations()"
             landmarkType = "7">
          </BreakpointContent>
@@ -158,8 +158,8 @@
             filePath = "Glaucoma/StaticMemory.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "223"
-            endingLineNumber = "223"
+            startingLineNumber = "274"
+            endingLineNumber = "274"
             landmarkName = "getPatientObservations()"
             landmarkType = "7">
          </BreakpointContent>
