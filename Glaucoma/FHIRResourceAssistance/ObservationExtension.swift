@@ -118,6 +118,16 @@ extension Observation
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
         return dateFormatter.date(from: isoDate)!
     }
+    func deleteWrapper() -> Bool
+    {
+        var valueToReturn = true;
+        self.delete(callback: { (error) in
+            if error != nil {
+                valueToReturn = false
+            }
+        })
+        return valueToReturn;
+    }
     
 }
 

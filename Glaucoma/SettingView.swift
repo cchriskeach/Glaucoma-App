@@ -38,7 +38,7 @@ struct SpencerView: View {
             Button("Send Random Data") {
                 let server = StaticMemory.getServer()
                 //Example of test code:
-                for i in 1...30 {
+                for i in 1...180 {
                     sleep(1);
                     print(i)
                     let observation = Observation();
