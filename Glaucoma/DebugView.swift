@@ -43,13 +43,15 @@ struct DebugView: View{
     @State var rangeObservations: [Observation] = []
     @State var data: [(String, Double)] = []
     func getRange(){
+        data.removeAll()
         for observation in allObservations{
             let date = observation.getDate()
-            data.append((String(describing: (observation.getDate())), Double(observation.getValue())))
+            data.append((String(describing: (observation.getDate())), observation.getValue()))
+            print(startDate)
             if date.compare(startDate) == .orderedDescending && date.compare(startDate) == .orderedAscending {
                 //rangeObservations.append(observation)
                 print(observation.getValue());
-                data.append((String(describing: (observation.getDate())), Double(observation.getValue())))
+                data.append((String(describing: (observation.getDate())), observation.getValue()))
             }
         }
     }

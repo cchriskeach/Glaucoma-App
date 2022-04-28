@@ -38,10 +38,11 @@ struct SpencerView: View {
             Button("Send Random Data") {
                 let server = StaticMemory.getServer()
                 //Example of test code:
-                for i in 1...200 {
+                for i in 1...30 {
+                    sleep(1);
                     print(i)
                     let observation = Observation();
-                    observation.CreateIOPObservation(mmHg: i, patient: StaticMemory.getPatient())
+                    observation.CreateIOPObservation(mmHg: Decimal(i), patient: StaticMemory.getPatient())
 
                     //print("\(observation.valueQuantity?.value)")
                     observation.create(server, callback: { (error) in

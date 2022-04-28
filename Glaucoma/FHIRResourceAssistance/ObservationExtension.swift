@@ -59,11 +59,11 @@ import FHIR
 
 extension Observation
 {
-    func CreateIOPObservation(mmHg: Int, patient: Patient)
+    func CreateIOPObservation(mmHg: Decimal, patient: Patient)
     {
         let quantity = Quantity();
         quantity.unit = "mmHg"
-        quantity.value = FHIRDecimal(integerLiteral: mmHg)
+        quantity.value = FHIRDecimal(mmHg)
         self.valueQuantity = quantity
         self.category = try! [CodeableConcept(json: [
             "coding": [
@@ -93,16 +93,16 @@ extension Observation
         let minutes = (Calendar.current.component(.minute, from: today))
         let seconds = (Calendar.current.component(.second, from: today))
         let hoursInt = UInt8("\(hours)")!;
-        let observationTime = FHIRTime(hour: UInt8("\(hours)")!, minute: UInt8("\(minutes)")!, second: 0)
+        let observationTime = FHIRTime(hour: UInt8("\(hours)")!, minute: UInt8("\(minutes)")!, second: Double("\(seconds)")!)
         let timeZone = TimeZone(abbreviation: "EST");
         let fiDate = FHIRDate(string: "\(today)")!;
         let observationDateTime = DateTime(date: fiDate, time: observationTime, timeZone: timeZone)
         self.effectiveDateTime = observationDateTime
         self.status = .final
     }
-    func getValue() -> Int
+    func getValue() -> Double
     {
-        return Int("\(self.valueQuantity?.value! ?? -1)")!
+        return Double("\(self.valueQuantity?.value! ?? -1)")!
     }
     
     func getDateTime() -> DateTime
