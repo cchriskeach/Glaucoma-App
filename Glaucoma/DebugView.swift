@@ -48,9 +48,10 @@ struct DebugView: View{
         data.removeAll()
         for observation in allObservations{
             let date = observation.getDate()
-            rangeObservations.append(observation)
-            data.append((String(describing: (observation.getDate())), observation.getValue()))
-            print(startDate)
+//            rangeObservations.append(observation)
+//            data.append((String(describing: (observation.getDate())), observation.getValue()))
+//            print(startDate)
+//            print(observation.getDate())
             if date.compare(startDate) == .orderedDescending && date.compare(startDate) == .orderedAscending {
                 rangeObservations.append(observation)
                 print(observation.getValue());
@@ -84,7 +85,7 @@ struct DebugView: View{
                 
                     List{
                         Section(header:HStack{
-                            Image(systemName: "calendar.circle").foregroundColor(.accentColor)
+                            Image(systemName: "calendar").foregroundColor(.accentColor)
                             Text("Multi-Day Data")
                             Spacer()
                         }){
@@ -102,12 +103,12 @@ struct DebugView: View{
                         }.headerProminence(.increased)
                         
                         Section(header:HStack{
-                            Image(systemName: "iphone.radiowaves.left.and.right.circle").foregroundColor(.accentColor)
+                            Image(systemName: "sun.min").foregroundColor(.accentColor)
                             Text("Single Day Data")
                             Spacer()
                         }){
                             NavigationLink(destination: SpencerView()){
-                                Text("Reconnect to Device")
+                                Text("Enter Date")
                             }
                         }.headerProminence(.increased)
                         
@@ -129,8 +130,7 @@ struct DebugView: View{
                             Button("Send Random Data (takes 30 seconds)") {
                                 let server = StaticMemory.getServer()
                                 //Example of test code:
-                                for i in 1...30 {
-                                    sleep(1);
+                                for i in 1...100 {
                                     print(i)
                                     let observation = Observation();
                                     observation.CreateIOPObservation(mmHg: Decimal(i), patient: StaticMemory.getPatient())
