@@ -39,10 +39,11 @@ struct DebugView: View{
     @State var startDate = Date()
     @State var endDate = Date()
     
+    @State var allObservations: [Observation] = StaticMemory.getObservations()
     @State var rangeObservations: [Observation] = []
     @State var data: [(String, Double)] = []
     func getRange(){
-        for observation in StaticMemory.getObservations(){
+        for observation in allObservations{
             let date = observation.getDate()
             if date > startDate && date < endDate{
                 rangeObservations.append(observation)
@@ -82,7 +83,7 @@ struct DebugView: View{
                             NavigationLink(destination: DebugGraphView(data: $data)){
                                 Text("View Graphs")
                             }
-                            NavigationLink(destination: SpencerView()){
+                            NavigationLink(destination: DebugListView(data: $data)){
                                 Text("View Raw Data")
                             }
                         }.headerProminence(.increased)
@@ -113,7 +114,9 @@ struct DebugView: View{
                                 Text("Exit Debug Mode")
                             }.foregroundColor(.red)
                         
-                    }.shadow(radius: 4)
+                    }.shadow(radius: 4).refreshable {
+                        allObservations = StaticMemory.getObservations()
+                    }
     
                     }.navigationBarTitle("")
                     .navigationBarHidden(true)
@@ -163,5 +166,21 @@ struct DebugGraphView: View{
                 BarChart()
             }.data(data).chartStyle(ChartStyle(backgroundColor: Color.clear, foregroundColor: ColorGradient(Color("Pop"), .accentColor))).padding(.all, 12)
         }.cornerRadius(30).padding(.horizontal).shadow(radius: 6)
+    }
+}
+
+struct DebugListView: View{
+    
+    @Binding var data: [(String,Double)]
+    
+    var body: some View{
+        
+        List(data, id: \.0){ (data0, data1) in
+            HStack{
+                Text("\(data0)")
+                Text("\(data1)")
+            }
+        }
+            
     }
 }
