@@ -108,6 +108,16 @@ struct ContentView: View {
                     Spacer()
                 Button(action: {
                     self.nextScreen = true
+                    if(StaticMemory.isUserInit == false)
+                    {
+                        //If user is not signed in, debug user loaded
+                        StaticMemory.InitializeUser();
+                    }
+                    while StaticMemory.isUserInit == false
+                    {
+                        /* Busy wait until we have an initilized user, should only take a few seconds */
+                    }
+                    StaticMemory.getPatientObservations()
                 }) {
                     Text("Connect my Tonometer")
                         .bold()

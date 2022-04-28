@@ -71,11 +71,12 @@ import CryptoKit
 class StaticMemory
 {
     static var patient = Patient();
-    static var userIdentifier:String = "test5@email"
+    //Change email address to change debug user
+    static var userIdentifier:String = "test6@email"
     static var userHash = ""
     static var isUserInit = false;
     static var server: GlaucomaFHIRServer = GlaucomaFHIRServer(baseURL: URL(string: "http://34.125.229.199:32783/fhir/r4/")!)
-    //http://34.125.229.199:32783/fhir/r4/Observation/2889
+    // http://34.125.229.199:32783/fhir/r4/Observation/2889
     // http://34.125.229.199:32783/fhir/r4/metadata
     // http://34.125.229.199:32783/fhir/r4/Patient/1983
     static var observations: [Observation] = [];
@@ -262,8 +263,13 @@ class StaticMemory
     public static func getPatientObservations()
     {
         //Get patient information for search
-        let patient = StaticMemory.getPatient()
-        let patientId = patient.id!
+        var patient = StaticMemory.getPatient()
+        var patientId = patient.id
+        while patient.id == nil
+        {
+            patient = StaticMemory.getPatient()
+            patientId = patient.id
+        }
         
         //Clear local observation list
         observations.removeAll()
@@ -276,7 +282,7 @@ class StaticMemory
                 while i! > 0 {
                     if let bundleEntry = bundle?.entry?.removeFirst(),
                         let observation = bundleEntry.resource as? Observation {
-                        observations.append(observation);
+                        observations.append(observation)
                     } else {
                         /* Out of entries, nothing to do */
                     }
