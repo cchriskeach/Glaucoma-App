@@ -56,6 +56,10 @@ struct DebugView: View{
         }
     }
     
+    func delete(at offsets: IndexSet){
+        //rangeObservations
+    }
+    
     var body: some View{
         ZStack{
             Color("Normal").ignoresSafeArea()
@@ -87,7 +91,7 @@ struct DebugView: View{
                             NavigationLink(destination: DebugGraphView(data: $data)){
                                 Text("View Graphs")
                             }
-                            NavigationLink(destination: DebugListView(data: $data)){
+                            NavigationLink(destination: DebugListView(rangeObservations: $rangeObservations)){
                                 Text("View Raw Data")
                             }
                         }.headerProminence(.increased)
@@ -176,16 +180,24 @@ struct DebugGraphView: View{
 
 struct DebugListView: View{
     
-    @Binding var data: [(String,Double)]
+    @Binding var rangeObservations: [Observation]
     
     var body: some View{
         
-        List(data, id: \.0){ (data0, data1) in
-            HStack{
-                Text("\(data0)")
-                Text("\(data1)")
-            }
+        List{
+            ForEach(rangeObservations, id: \.self){ item in
+                HStack{
+                    Text("\(String(describing: item.getDate()))")
+                    Text("\(item.getValue())")
+                }
+            }.onDelete(perform: delete)
         }
             
+    }
+    
+    func delete(at offsets: IndexSet){
+        for indexes in offsets{
+            StaticMemory.deleteSingleObservation(date: rangeObservations[indexes].getDate(), value: rangeObservations[indexes].getValue())
+        }
     }
 }
