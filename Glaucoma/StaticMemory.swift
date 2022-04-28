@@ -353,7 +353,7 @@ class StaticMemory
         var attemptRemoval = false;
         for observation in observations {
             
-            if(date == observation.getDate() && value == Double("\(observation.getValue())")!)
+            if(date == observation.getDate() && value == observation.getValue())
             {
                 observationToRemove = observation;
                 valueToReturn = observation.deleteWrapper();
