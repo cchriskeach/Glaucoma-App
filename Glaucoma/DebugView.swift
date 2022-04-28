@@ -84,7 +84,7 @@ struct DebugView: View{
                 
                     List{
                         Section(header:HStack{
-                            Image(systemName: "info.circle").foregroundColor(.accentColor)
+                            Image(systemName: "calendar.circle").foregroundColor(.accentColor)
                             Text("Multi-Day Data")
                             Spacer()
                         }){
@@ -112,7 +112,7 @@ struct DebugView: View{
                         }.headerProminence(.increased)
                         
                         Section(header:HStack{
-                            Image(systemName: "figure.wave.circle").foregroundColor(.accentColor)
+                            Image(systemName: "record.circle").foregroundColor(.accentColor)
                             Text("BLE Real Time Read")
                             Spacer()
                         }){
@@ -122,10 +122,27 @@ struct DebugView: View{
                         }.headerProminence(.increased)
                         
                         Section(header:HStack{
-                            Image(systemName: "figure.wave.circle").foregroundColor(.accentColor)
+                            Image(systemName: "xserve").foregroundColor(.accentColor)
                             Text("Server Commands")
                             Spacer()
                         }){
+                            Button("Send Random Data (takes 30 seconds)") {
+                                let server = StaticMemory.getServer()
+                                //Example of test code:
+                                for i in 1...30 {
+                                    sleep(1);
+                                    print(i)
+                                    let observation = Observation();
+                                    observation.CreateIOPObservation(mmHg: Decimal(i), patient: StaticMemory.getPatient())
+
+                                    //print("\(observation.valueQuantity?.value)")
+                                    observation.create(server, callback: { (error) in
+                                        if error != nil {
+                                            //print(error as Any)
+                                        }
+                                    })
+                                }
+                            }
                             Button("Print Observations")
                             {
                                 StaticMemory.printObservations()
