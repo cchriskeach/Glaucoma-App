@@ -92,8 +92,7 @@ struct DebugView: View{
                             NavigationLink(destination:
                                             TimeView(startDate: $startDate, endDate: $endDate)){
                                 Text("Enter Time Range")
-                            }.simultaneousGesture(TapGesture().onEnded{
-                                getRange()})
+                            }
                             NavigationLink(destination: DebugGraphView(data: $data)){
                                 Text("View Graphs")
                             }
@@ -128,20 +127,7 @@ struct DebugView: View{
                             Spacer()
                         }){
                             Button("Send Random Data") {
-                                let server = StaticMemory.getServer()
-                                //Example of test code:
-                                for i in 1...100 {
-                                    print(i)
-                                    let observation = Observation();
-                                    observation.CreateIOPObservation(mmHg: Decimal(i), patient: StaticMemory.getPatient())
-
-                                    //print("\(observation.valueQuantity?.value)")
-                                    observation.create(server, callback: { (error) in
-                                        if error != nil {
-                                            //print(error as Any)
-                                        }
-                                    })
-                                }
+                                StaticMemory.sendRandomData()
                             }
                             Button("Print Observations")
                             {
@@ -182,7 +168,7 @@ struct DebugView: View{
                                 Text("Exit Debug Mode")
                             }.foregroundColor(.red)
                         
-                    }.shadow(radius: 4).refreshable {
+                    }.shadow(radius: 4).onAppear{
                         allObservations = StaticMemory.getObservations()
                         getRange()
                     }
