@@ -77,7 +77,7 @@ struct MasterSettingsView: View {
     var body: some View {
         VStack{
             if nextScreen{
-                DebugView()
+                DebugView(nextScreen: $nextScreen)
             } else {
                 SettingView(nextScreen: $nextScreen)
             }
