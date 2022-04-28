@@ -52,7 +52,7 @@ struct SpencerView: View {
                     })
                 }
             }
-            Button("Delete") {
+            Button("Delete Patient Forever") {
                 _ = StaticMemory.deletePatientForever()
             }
             Button("Print Observations")
