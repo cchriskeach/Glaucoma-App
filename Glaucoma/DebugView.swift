@@ -52,7 +52,7 @@ struct DebugView: View{
 //            data.append((String(describing: (observation.getDate())), observation.getValue()))
             print("Start: ", startDate)
             print("Observed: ", observation.getDate())
-            if date.compare(startDate) == .orderedDescending && date.compare(startDate) == .orderedAscending {
+            if date > startDate && date < endDate{
                 rangeObservations.append(observation)
                 print(observation.getValue());
                 data.append((String(describing: (observation.getDate())), observation.getValue()))
