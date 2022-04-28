@@ -46,10 +46,11 @@ struct DebugView: View{
         data.removeAll()
         for observation in allObservations{
             let date = observation.getDate()
+            rangeObservations.append(observation)
             data.append((String(describing: (observation.getDate())), observation.getValue()))
             print(startDate)
             if date.compare(startDate) == .orderedDescending && date.compare(startDate) == .orderedAscending {
-                //rangeObservations.append(observation)
+                rangeObservations.append(observation)
                 print(observation.getValue());
                 data.append((String(describing: (observation.getDate())), observation.getValue()))
             }
@@ -183,7 +184,6 @@ struct DebugListView: View{
     @Binding var rangeObservations: [Observation]
     
     var body: some View{
-        
         List{
             ForEach(rangeObservations, id: \.self){ item in
                 HStack{
@@ -192,10 +192,10 @@ struct DebugListView: View{
                 }
             }.onDelete(perform: delete)
         }
-            
     }
     
     func delete(at offsets: IndexSet){
+        rangeObservations.remove(atOffsets: offsets)
         for indexes in offsets{
             StaticMemory.deleteSingleObservation(date: rangeObservations[indexes].getDate(), value: rangeObservations[indexes].getValue())
         }
