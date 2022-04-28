@@ -388,4 +388,22 @@ class StaticMemory
         observations.removeAll()
         return valueToReturn
     }
+    
+    public static func sendRandomData() -> Void
+    {
+        for i in 1...180 {
+            sleep(1);
+            print(i)
+            let observation = Observation();
+            observation.CreateIOPObservation(mmHg: Decimal(i), patient: StaticMemory.getPatient())
+
+            //print("\(observation.valueQuantity?.value)")
+            observation.create(server, callback: { (error) in
+                if error != nil {
+                    //print(error as Any)
+                }
+            })
+        }
+    }
+    
 }
