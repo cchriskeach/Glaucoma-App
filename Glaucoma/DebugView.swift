@@ -45,8 +45,10 @@ struct DebugView: View{
     func getRange(){
         for observation in allObservations{
             let date = observation.getDate()
-            if date > startDate && date < endDate{
-                rangeObservations.append(observation)
+            data.append((String(describing: (observation.getDate())), Double(observation.getValue())))
+            if date.compare(startDate) == .orderedDescending && date.compare(startDate) == .orderedAscending {
+                //rangeObservations.append(observation)
+                print(observation.getValue());
                 data.append((String(describing: (observation.getDate())), Double(observation.getValue())))
             }
         }
@@ -116,6 +118,7 @@ struct DebugView: View{
                         
                     }.shadow(radius: 4).refreshable {
                         allObservations = StaticMemory.getObservations()
+                        getRange()
                     }
     
                     }.navigationBarTitle("")
