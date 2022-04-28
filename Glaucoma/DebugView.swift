@@ -113,7 +113,17 @@ struct DebugView: View{
                         
                         Section(header:HStack{
                             Image(systemName: "figure.wave.circle").foregroundColor(.accentColor)
-                            Text("Incoming BLE Data")
+                            Text("BLE Real Time Read")
+                            Spacer()
+                        }){
+                            NavigationLink(destination: SpencerView()){
+                                Text("Live View")
+                            }
+                        }.headerProminence(.increased)
+                        
+                        Section(header:HStack{
+                            Image(systemName: "figure.wave.circle").foregroundColor(.accentColor)
+                            Text("Server Commands")
                             Spacer()
                         }){
                             Button("Print Observations")
@@ -147,16 +157,6 @@ struct DebugView: View{
                                     Button("No", role: .cancel){}
                                 }
                             )
-                        }.headerProminence(.increased)
-                        
-                        Section(header:HStack{
-                            Image(systemName: "figure.wave.circle").foregroundColor(.accentColor)
-                            Text("Server Spencer Stuff")
-                            Spacer()
-                        }){
-                            NavigationLink(destination: SpencerView()){
-                                Text("Live View")
-                            }
                         }.headerProminence(.increased)
                         
                          Button(action:{
