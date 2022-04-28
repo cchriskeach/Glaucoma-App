@@ -50,8 +50,8 @@ struct DebugView: View{
             let date = observation.getDate()
 //            rangeObservations.append(observation)
 //            data.append((String(describing: (observation.getDate())), observation.getValue()))
-//            print(startDate)
-//            print(observation.getDate())
+            print("Start: ", startDate)
+            print("Observed: ", observation.getDate())
             if date.compare(startDate) == .orderedDescending && date.compare(startDate) == .orderedAscending {
                 rangeObservations.append(observation)
                 print(observation.getValue());
@@ -127,7 +127,7 @@ struct DebugView: View{
                             Text("Server Commands")
                             Spacer()
                         }){
-                            Button("Send Random Data (takes 30 seconds)") {
+                            Button("Send Random Data") {
                                 let server = StaticMemory.getServer()
                                 //Example of test code:
                                 for i in 1...100 {
