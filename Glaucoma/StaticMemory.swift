@@ -72,7 +72,7 @@ class StaticMemory
 {
     static var patient = Patient();
     //Change email address to change debug user
-    static var userIdentifier:String = "test6@email"
+    static var userIdentifier:String = "test7@email"
     static var userHash = ""
     static var isUserInit = false;
     static var server: GlaucomaFHIRServer = GlaucomaFHIRServer(baseURL: URL(string: "http://34.125.229.199:32783/fhir/r4/")!)
@@ -264,21 +264,22 @@ class StaticMemory
     {
         //Get patient information for search
         var patient = StaticMemory.getPatient()
-        var patientId = patient.id
         while patient.id == nil
         {
-            patient = StaticMemory.getPatient()
-            patientId = patient.id
+            patient = StaticMemory.getPatient();
         }
+        let patientId = patient.id!
         
         //Clear local observation list
         observations.removeAll()
         srch = Observation.search(["patient" : "\(patientId)"])
+        print("About to perform search \(patientId)");
 
         srch.perform(server) { (bundle, error) in
             var i = bundle?.entry?.count
             if i != nil
             {
+                print("We have some observations")
                 while i! > 0 {
                     if let bundleEntry = bundle?.entry?.removeFirst(),
                         let observation = bundleEntry.resource as? Observation {
@@ -288,6 +289,7 @@ class StaticMemory
                     }
                     i = i! - 1;
                 }
+                print("Getting next page of observatins!")
                 StaticMemory.getNextPageOfObservations()
             }
         }
