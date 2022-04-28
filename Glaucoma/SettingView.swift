@@ -70,7 +70,24 @@ struct SpencerView: View {
     }
 }
 
+struct MasterSettingsView: View {
+    @State var nextScreen = false
+    
+    var body: some View {
+        VStack{
+            if nextScreen{
+                DebugView()
+            } else {
+                SettingView(nextScreen: $nextScreen)
+            }
+        }
+    }
+}
+
 struct SettingView: View{
+    
+    @Binding var nextScreen: Bool
+    
     var body: some View{
         ZStack{
             Color("Normal").ignoresSafeArea()
@@ -107,7 +124,7 @@ struct SettingView: View{
                         
                         Section(header:HStack{
                             Image(systemName: "iphone.radiowaves.left.and.right.circle").foregroundColor(.accentColor)
-                            Text("Bleutooth")
+                            Text("Bluetooth")
                             Spacer()
                         }){
                             NavigationLink(destination: SpencerView()){
@@ -144,7 +161,7 @@ struct SettingView: View{
                             }.foregroundColor(.accentColor)
                         
                          Button(action:{
-                                //do something
+                             self.nextScreen.toggle()
                             }) {
                                 Text("Enter Debug Mode")
                             }.foregroundColor(.red)
@@ -161,6 +178,6 @@ struct SettingView: View{
 
 struct SettingView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingView()
+        SettingView(nextScreen: Binding.constant(false))
     }
 }

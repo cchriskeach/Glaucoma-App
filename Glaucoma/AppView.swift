@@ -43,7 +43,7 @@ struct AppView: View {
                     Image(systemName: "list.bullet")
                     Text("Data")
                 }
-            SettingView()
+            MasterSettingsView()
                 .tabItem{
                     Image(systemName: "gear")
                     Text("Settings")

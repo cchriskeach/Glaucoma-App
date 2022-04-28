@@ -20,6 +20,7 @@
 		60947C6927FB35C600584BA3 /* BLEConnectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60947C6827FB35C600584BA3 /* BLEConnectView.swift */; };
 		60947C6C27FB3FBA00584BA3 /* HomeView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60947C6B27FB3FBA00584BA3 /* HomeView2.swift */; };
 		60947C6E27FB479E00584BA3 /* DataView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60947C6D27FB479E00584BA3 /* DataView2.swift */; };
+		60E21EB02819FAFA0090A28F /* DebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E21EAF2819FAFA0090A28F /* DebugView.swift */; };
 		60F1F74927FED5F100A84BDE /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 60F1F74827FED5F100A84BDE /* SwiftUICharts */; };
 		60F1F74D27FF574F00A84BDE /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F1F74C27FF574F00A84BDE /* HomeViewModel.swift */; };
 		60F1F74F27FF9A5F00A84BDE /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F1F74E27FF9A5F00A84BDE /* ViewExtension.swift */; };
@@ -57,6 +58,7 @@
 		60947C6827FB35C600584BA3 /* BLEConnectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEConnectView.swift; sourceTree = "<group>"; };
 		60947C6B27FB3FBA00584BA3 /* HomeView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView2.swift; sourceTree = "<group>"; };
 		60947C6D27FB479E00584BA3 /* DataView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataView2.swift; sourceTree = "<group>"; };
+		60E21EAF2819FAFA0090A28F /* DebugView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugView.swift; sourceTree = "<group>"; };
 		60F1F74A27FED60D00A84BDE /* ChartView */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ChartView; sourceTree = "<group>"; };
 		60F1F74C27FF574F00A84BDE /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		60F1F74E27FF9A5F00A84BDE /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				D69DEF5A27E6A716001F5F6D /* Glaucoma.entitlements */,
 				6032D198257D9B4000E66007 /* GlaucomaApp.swift */,
 				6032D19A257D9B4000E66007 /* ContentView.swift */,
+				60E21EAF2819FAFA0090A28F /* DebugView.swift */,
 				601AD88725836D4B00A43234 /* AppView.swift */,
 				601AD88425836A2200A43234 /* HomeView.swift */,
 				D6143AA027AF0D2500F273B4 /* SettingView.swift */,
@@ -312,6 +315,7 @@
 				60947C6E27FB479E00584BA3 /* DataView2.swift in Sources */,
 				60F1F74D27FF574F00A84BDE /* HomeViewModel.swift in Sources */,
 				6032D199257D9B4000E66007 /* GlaucomaApp.swift in Sources */,
+				60E21EB02819FAFA0090A28F /* DebugView.swift in Sources */,
 				D63819F427E642BB004F2B5E /* Keychain.swift in Sources */,
 				D63819F627E642FD004F2B5E /* WebApi.swift in Sources */,
 				60947C6C27FB3FBA00584BA3 /* HomeView2.swift in Sources */,
