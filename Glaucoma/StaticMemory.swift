@@ -344,6 +344,32 @@ class StaticMemory
         print("Observation Count = \(observations.count)")
     }
     
+    public static func deleteSingleObservation(date: Date, value: Double) -> Bool
+    {
+        var valueToReturn = false;
+        var observationToRemove = Observation();
+        var observationIndex = 0;
+        var indexToRemove = 0;
+        var attemptRemoval = false;
+        for observation in observations {
+            
+            if(date == observation.getDate() && value == Double("\(observation.getValue())")!)
+            {
+                observationToRemove = observation;
+                valueToReturn = observation.deleteWrapper();
+                indexToRemove = observationIndex;
+                attemptRemoval = true;
+            }
+            observationIndex = observationIndex + 1;
+        }
+        if attemptRemoval
+        {
+            valueToReturn = observationToRemove.deleteWrapper();
+            observations.remove(at: indexToRemove);
+        }
+        return valueToReturn
+    }
+    
     //Takes all the observations that are currently loaded in the device and asks the server to delete them.
     public static func deleteAllLocalObservations() -> Bool
     {

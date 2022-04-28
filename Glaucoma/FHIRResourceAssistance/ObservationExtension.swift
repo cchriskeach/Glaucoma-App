@@ -57,8 +57,17 @@
 import Foundation
 import FHIR
 
-extension Observation
+extension Observation : Hashable
 {
+    public static func == (lhs: Observation, rhs: Observation) -> Bool {
+        return lhs.getDate() == rhs.getDate() && lhs.getValue() == rhs.getValue()
+    }
+    
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(self.getDate())
+        hasher.combine(self.getValue())
+    }
+        
     func CreateIOPObservation(mmHg: Decimal, patient: Patient)
     {
         let quantity = Quantity();
@@ -116,6 +125,7 @@ extension Observation
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "en_US_POSIX")
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        //dateFormatter.setTimeZone(TimeZone(abbreviation: "EST"))
         return dateFormatter.date(from: isoDate)!
     }
     func deleteWrapper() -> Bool
