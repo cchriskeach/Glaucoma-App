@@ -45,12 +45,13 @@ How to launch the Cloud Server
 A cloud server can be launched or a localhost server can be made following the directions in this repository: https://github.com/intersystems-community/iris-fhir-template
 
 ## Video on how to launch a real cloud server:
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/0HpFLE-mc9Y/0.jpg)](https://youtu.be/0HpFLE-mc9Y)
 
 ## Known Issues
 
 ## Technical Notes
 
-#Open Source License
+# Open Source License
 
 ## License 1: 
 
