@@ -44,6 +44,7 @@ struct DebugView: View{
     @State var allObservations: [Observation] = StaticMemory.getObservations()
     @State var rangeObservations: [Observation] = []
     @State var data: [(String, Double)] = []
+    @State var dataValue: [Double] = []
     func getRange(){
         data.removeAll()
         for observation in allObservations{
@@ -52,6 +53,7 @@ struct DebugView: View{
                 rangeObservations.append(observation)
                 print(observation.getValue());
                 data.append((String(describing: (observation.getDate())), observation.getValue()))
+                dataValue.append(observation.getValue())
             }
         }
     }
@@ -89,7 +91,7 @@ struct DebugView: View{
                                             TimeView(startDate: $startDate, endDate: $endDate)){
                                 Text("Enter Time Range")
                             }
-                            NavigationLink(destination: DebugGraphView(data: $data)){
+                            NavigationLink(destination: DebugGraphView(data: $dataValue)){
                                 Text("View Graphs")
                             }
                             NavigationLink(destination: DebugListView(rangeObservations: $rangeObservations)){
@@ -208,15 +210,14 @@ struct TimeView: View{
 struct DebugGraphView: View{
     
     @State var today = Today()
-    @Binding var data: [(String,Double)]
+    @Binding var data: [Double]
     
     var body: some View{
         ZStack(alignment: .topTrailing){
             Color("Pop").ignoresSafeArea()
             
             CardView{
-                ChartLabel("Tests Per Day", type: .custom(size: 28, padding: EdgeInsets(top: 5.0, leading: 5.0, bottom: 0.0, trailing: 5.0), color: Color(UIColor.label)))
-                ChartLabel(today.getPastWeek(), type: .legend)
+                ChartLabel("IOP Observations", type: .custom(size: 28, padding: EdgeInsets(top: 5.0, leading: 5.0, bottom: 0.0, trailing: 5.0), color: Color(UIColor.label)))
                 BarChart()
             }.data(data).chartStyle(ChartStyle(backgroundColor: Color.clear, foregroundColor: ColorGradient(Color("Pop"), .accentColor))).padding(.all, 12)
         }.cornerRadius(30).padding(.horizontal).shadow(radius: 6)
