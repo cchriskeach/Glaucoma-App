@@ -29,6 +29,7 @@
 ///OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 import SwiftUI
+import FHIR
 
 struct HomeView2: View {
     
@@ -80,6 +81,8 @@ struct HomeView2_Previews: PreviewProvider {
 struct TestView: View {
     
     @EnvironmentObject var hVM: HomeViewModel
+    @EnvironmentObject var bleViewModel: BLEViewModel
+    @State var observation = Observation()
     
     var body: some View {
             ZStack{
@@ -144,6 +147,7 @@ struct TestView: View {
                             Spacer()
                             
                             Button(action:{
+                                observation.CreateIOPObservation(mmHg: Decimal(bleViewModel.data!.data), patient: StaticMemory.getPatient())
                                 hVM.testON.toggle()
                             }){
                                 Text("STOP TEST")
