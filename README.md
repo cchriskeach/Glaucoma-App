@@ -1,0 +1,175 @@
+# Glac-home-a
+
+## Technical Documentation
+### Purpose of the application:
+#### Introduction
+    Glac-home-a is an application that is currently in the development but is being used in an NSF funded grant research program. The goal of the research project is to create a device for at-home interocular pressure reading that will then send the data to the a phone so that the data can be viewed, and shipped to the server. The theoretical device which has not yet been fully developed would connect to the phone via Bluetooth.
+#### Aid Development Process
+    Since at the current moment the interocular pressure reading device is still in development the engineers making the device need a software solution to aid the debugging process along with have a baseline starting point for when the device will be used more extensively in the beta testing phase of the project.
+### Main Features
+    The main features that were implemented in this application are as follows:
+1. Login and user verification process
+2. User and Server Account Creation
+3. Bluetooth data collection
+4. Delete user
+5. Record observations on the server
+6. Delete observations
+7. Display observations in graphical form to the user
+8. Data is exchanged between the application and the user
+9. Debug mode
+
+### Developer Assistance
+
+#### How to build the application
+
+
+#### Developer Account
+In order to build the application with all of its features an Apple Developer account is needed. To purchase an apple developer account please visit developer.apple.com
+
+#### Commands to Build
+
+Git clone (insert repo here)
+Git submodule init
+Open Xcode Project
+Sign in with developer account in Xcode
+Click the build button in Xcode, it looks like a play symbol in the top left of Xcode.
+
+#### How to use the application
+Debug Mode
+Debug Mode Features
+The purpose of debug mode is to create a system within the application that is able to assist the hardware developers in their development process. The following features of debug mode are as follows:
+
+#### How to make adjustments
+
+How to launch the Cloud Server
+A cloud server can be launched or a localhost server can be made following the directions in this repository: https://github.com/intersystems-community/iris-fhir-template
+
+## Video on how to launch a real cloud server:
+
+## Known Issues
+
+## Technical Notes
+
+#Open Source License
+
+There are multiple open source pieces of code that have been used in this project, two of which are under different licenses then what this code is licensed under.
+The below MIT License applies to the following files.
+StaticMemory.swift
+All files in the folder FHIRResourceAssistance except GlaucomaFHIRServer.swift 
+
+MIT License
+
+Copyright (c) 2019 InterSystems Developer Community
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE
+The below License applies to the following files:
+
+All files located in the folder “AppleSignIn”
+
+Copyright (c) 2019 Razeware LLC
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+Notwithstanding the foregoing, you may not use, copy, modify, merge, publish,
+distribute, sublicense, create a derivative work, and/or sell copies of the
+Software in any work that is designed, intended, or marketed for pedagogical or
+instructional purposes related to programming, coding, application development,
+or information technology.  Permission for such use, copying, modification,
+merger, publication, distribution, sublicensing, creation of derivative works,
+or sale is expressly withheld.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+
+The below License applies to all files not explicitly stated above except the following:
+
+StaticMemory.swift
+FHIRResourceAssistance/PatientExtension
+FHIRResourceAssistance/ObservationExtension
+AppleSignIn/SignInWithApple
+
+BSD 3-Clause License
+
+Copyright (c) 2022, University of Pittsburgh
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+1. Redistributions of source code must retain the above copyright notice, this
+   list of conditions and the following disclaimer.
+
+2. Redistributions in binary form must reproduce the above copyright notice,
+   this list of conditions and the following disclaimer in the documentation
+   and/or other materials provided with the distribution.
+
+3. Neither the name of the copyright holder nor the names of its
+   contributors may be used to endorse or promote products derived from
+   this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+The below License applies to the following files:
+
+All files located in the package ChartView
+
+MIT License
+
+Copyright (c) 2021 Will Dale
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
