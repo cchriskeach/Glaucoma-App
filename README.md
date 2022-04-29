@@ -52,10 +52,13 @@ A cloud server can be launched or a localhost server can be made following the d
 
 #Open Source License
 
+## License 1: 
+
 There are multiple open source pieces of code that have been used in this project, two of which are under different licenses then what this code is licensed under.
 The below MIT License applies to the following files.
-StaticMemory.swift
-All files in the folder FHIRResourceAssistance except GlaucomaFHIRServer.swift 
+
+1. StaticMemory.swift
+2. All files in the folder FHIRResourceAssistance except GlaucomaFHIRServer.swift 
 
 MIT License
 
@@ -78,6 +81,8 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE
+
+## License 2:
 The below License applies to the following files:
 
 All files located in the folder “AppleSignIn”
@@ -110,7 +115,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
-
+## License 3:
 The below License applies to all files not explicitly stated above except the following:
 
 StaticMemory.swift
@@ -148,6 +153,8 @@ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+
+## License 4:
 The below License applies to the following files:
 
 All files located in the package ChartView
