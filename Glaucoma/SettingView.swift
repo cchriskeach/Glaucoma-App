@@ -109,7 +109,7 @@ struct SettingView: View{
                             Text("Medical Details")
                             Spacer()
                         }){
-                            NavigationLink(destination: SpencerView()){
+                            NavigationLink(destination: Text("Nothing")){
                                 Text("Health Profile")
                             }
                             NavigationLink(destination: SpencerView()){
@@ -128,7 +128,7 @@ struct SettingView: View{
                             Text("Bluetooth")
                             Spacer()
                         }){
-                            NavigationLink(destination: SpencerView()){
+                            NavigationLink(destination: BLEConnectView(nextScreen: Binding.constant(false))){
                                 Text("Reconnect to Device")
                             }
                         }.headerProminence(.increased)
