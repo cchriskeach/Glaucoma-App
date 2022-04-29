@@ -53,7 +53,7 @@ class BLEViewModel: NSObject, ObservableObject{
     
     var BLEon = false
     
-//    @Published var motorHand: MotorHandData?
+    @Published var data: TonometerData?
     @Published var BLEStatus = "No Device Connected"
     
     override init(){
@@ -319,7 +319,7 @@ extension BLEViewModel: CBCentralManagerDelegate, CBPeripheralDelegate{
         print("Updating View..")
 
         //do something pass to view controller and update a UI color there
-//        motorHand = MotorHandData(value)
+        data = TonometerData(value)
         
         //this converts value to a string
 //        if let string = String(data: value, encoding: .utf8){

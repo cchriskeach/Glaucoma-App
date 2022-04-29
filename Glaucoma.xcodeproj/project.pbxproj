@@ -20,6 +20,7 @@
 		60947C6927FB35C600584BA3 /* BLEConnectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60947C6827FB35C600584BA3 /* BLEConnectView.swift */; };
 		60947C6C27FB3FBA00584BA3 /* HomeView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60947C6B27FB3FBA00584BA3 /* HomeView2.swift */; };
 		60947C6E27FB479E00584BA3 /* DataView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60947C6D27FB479E00584BA3 /* DataView2.swift */; };
+		609D0AB7281B726600F350E9 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609D0AB6281B726600F350E9 /* Data.swift */; };
 		60E21EB02819FAFA0090A28F /* DebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E21EAF2819FAFA0090A28F /* DebugView.swift */; };
 		60F1F74927FED5F100A84BDE /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 60F1F74827FED5F100A84BDE /* SwiftUICharts */; };
 		60F1F74D27FF574F00A84BDE /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F1F74C27FF574F00A84BDE /* HomeViewModel.swift */; };
@@ -58,6 +59,7 @@
 		60947C6827FB35C600584BA3 /* BLEConnectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEConnectView.swift; sourceTree = "<group>"; };
 		60947C6B27FB3FBA00584BA3 /* HomeView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView2.swift; sourceTree = "<group>"; };
 		60947C6D27FB479E00584BA3 /* DataView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataView2.swift; sourceTree = "<group>"; };
+		609D0AB6281B726600F350E9 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		60E21EAF2819FAFA0090A28F /* DebugView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugView.swift; sourceTree = "<group>"; };
 		60F1F74A27FED60D00A84BDE /* ChartView */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ChartView; sourceTree = "<group>"; };
 		60F1F74C27FF574F00A84BDE /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				604C883827FE8D9A006BD226 /* Date.swift */,
 				60F1F74E27FF9A5F00A84BDE /* ViewExtension.swift */,
 				60F1F75027FFA7E100A84BDE /* DataHandling.swift */,
+				609D0AB6281B726600F350E9 /* Data.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 				D69DEF6127E6A9D7001F5F6D /* PatientExtension.swift in Sources */,
 				D659A8A527D868C6006E5CA4 /* GlaucomaFHIRServer.swift in Sources */,
 				D63819F127E642BB004F2B5E /* SharedWebCredential.swift in Sources */,
+				609D0AB7281B726600F350E9 /* Data.swift in Sources */,
 				D63819F327E642BB004F2B5E /* UserDataKeychain.swift in Sources */,
 				D63819E927E63F7C004F2B5E /* SignInWithAppleDelegates.swift in Sources */,
 				6032D19B257D9B4000E66007 /* ContentView.swift in Sources */,

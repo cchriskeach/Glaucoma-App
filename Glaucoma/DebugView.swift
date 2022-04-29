@@ -48,10 +48,6 @@ struct DebugView: View{
         data.removeAll()
         for observation in allObservations{
             let date = observation.getDate()
-//            rangeObservations.append(observation)
-//            data.append((String(describing: (observation.getDate())), observation.getValue()))
-            print("Start: ", startDate)
-            print("Observed: ", observation.getDate())
             if date > startDate && date < endDate{
                 rangeObservations.append(observation)
                 print(observation.getValue());
@@ -102,12 +98,15 @@ struct DebugView: View{
                         }.headerProminence(.increased)
                         
                         Section(header:HStack{
-                            Image(systemName: "sun.min").foregroundColor(.accentColor)
-                            Text("Single Day Data")
+                            Image(systemName: "d.circle").foregroundColor(.accentColor)
+                            Text("Data Analysis")
                             Spacer()
                         }){
-                            NavigationLink(destination: SpencerView()){
-                                Text("Enter Date")
+                            NavigationLink(destination: MaxView(data: $data)){
+                                Text("Max of current time range")
+                            }
+                            NavigationLink(destination: MinView(data: $data)){
+                                Text("Min of current time range")
                             }
                         }.headerProminence(.increased)
                         
@@ -116,7 +115,7 @@ struct DebugView: View{
                             Text("BLE Real Time Read")
                             Spacer()
                         }){
-                            NavigationLink(destination: SpencerView()){
+                            NavigationLink(destination: LiveView()){
                                 Text("Live View")
                             }
                         }.headerProminence(.increased)
@@ -244,5 +243,59 @@ struct DebugListView: View{
         for indexes in offsets{
             StaticMemory.deleteSingleObservation(date: rangeObservations[indexes].getDate(), value: rangeObservations[indexes].getValue())
         }
+    }
+}
+
+struct LiveView: View{
+    
+    @EnvironmentObject var bleViewModel: BLEViewModel
+    
+    var body: some View{
+        VStack{
+            Text("Incoming Data:").font(.largeTitle).bold().multilineTextAlignment(.center).foregroundColor(Color("Inverse")).padding()
+            if bleViewModel.data != nil{
+                Text(String(bleViewModel.data!.data))
+            }else{
+                Text("Nothing Being Read from Device")
+            }
+        }
+    }
+}
+
+struct MaxView: View{
+    @Binding var data: [(String, Double)]
+    @State var max: (String, Double) = ("No Time Range", 0)
+    
+    func findMax(){
+        if let maxItem = data.max(by: {$0.1 < $1.1 }){
+            max = (maxItem.0, maxItem.1)
+        }
+    }
+    
+    var body: some View{
+        HStack{
+            Text(max.0)
+            Spacer()
+            Text(String(max.1))
+        }.padding(.horizontal,50).onAppear(perform: findMax)
+    }
+}
+
+struct MinView: View{
+    @Binding var data: [(String, Double)]
+    @State var max: (String, Double) = ("No Time Range", 0)
+    
+    func findMax(){
+        if let maxItem = data.min(by: {$0.1 < $1.1 }){
+            max = (maxItem.0, maxItem.1)
+        }
+    }
+    
+    var body: some View{
+        HStack{
+            Text(max.0)
+            Spacer()
+            Text(String(max.1))
+        }.padding(.horizontal,50).onAppear(perform: findMax)
     }
 }
