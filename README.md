@@ -84,8 +84,8 @@ A cloud server can be launched or a localhost server can be made following the d
 ## Developer Code Walkthough:
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/uk3yv19-ty8/0.jpg)](https://youtu.be/uk3yv19-ty8)
 
-## Swift UI Code Walkthough:
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/uk3yv19-ty8/0.jpg)](https://youtu.be/uk3yv19-ty8)
+## SwiftUI Code Walkthough:
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/vXuGA1aPwtk/0.jpg)](https://youtu.be/vXuGA1aPwtk)
 
 ## Video Demonstration of the Application
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/LYPljeIDVu0/0.jpg)](https://youtu.be/LYPljeIDVu0)
