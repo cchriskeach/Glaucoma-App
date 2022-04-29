@@ -30,11 +30,12 @@ In order to build the application with all of its features an Apple Developer ac
 
 #### Commands to Build
 
-Git clone (insert repo here)
-Git submodule init
-Open Xcode Project
-Sign in with developer account in Xcode
-Click the build button in Xcode, it looks like a play symbol in the top left of Xcode.
+`git clone (insert repo here)`
+`git submodule init`
+`git submodule update`
+`Open Xcode Project`
+`Sign in with developer account in Xcode`
+`Click the build button in Xcode, it looks like a play symbol in the top left of Xcode.`
 
 #### How to use the application
 Debug Mode
@@ -46,18 +47,15 @@ The purpose of debug mode is to create a system within the application that is a
 How to launch the Cloud Server
 A cloud server can be launched or a localhost server can be made following the directions in this repository: https://github.com/intersystems-community/iris-fhir-template
 
-## Video on how to launch a real cloud server:
+## Launching a Google Cloud FHIR Servers:
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/0HpFLE-mc9Y/0.jpg)](https://youtu.be/0HpFLE-mc9Y)
 
-## Video Tutorial 1:
+## Helpful Xcode and Code Tutorial:
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/nKJfJYOttMo/0.jpg)](https://youtu.be/nKJfJYOttMo)
 1. How to load Xcode
 2. Mac Tools
 3. How to load the reposittory
 4. Information on how the application is organized
-
-## Video Tutorial 2:
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/Ne1W1m6fFrc/0.jpg)](https://youtu.be/Ne1W1m6fFrc)
 
 ## Developer Application Walkthough:
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/dbj0paem438/0.jpg)](https://youtu.be/dbj0paem438)
@@ -69,7 +67,7 @@ A cloud server can be launched or a localhost server can be made following the d
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/uk3yv19-ty8/0.jpg)](https://youtu.be/uk3yv19-ty8)
 
 ## Video Demonstration of the Application
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/Ne1W1m6fFrc/0.jpg)](https://youtu.be/Ne1W1m6fFrc)
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/LYPljeIDVu0/0.jpg)](https://youtu.be/LYPljeIDVu0)
 
 ## Known Issues & Future Development
 
@@ -79,6 +77,12 @@ A cloud server can be launched or a localhost server can be made following the d
 4. Add more user functionality for getting and using data.
 5. During very very slow internet connectivity the device may not respond, this is a rare occurance.
 6. If you delete all observation or the patient you need to restart the application
+
+## Helpful links
+
+1. https://github.com/intersystems-community/iris-fhir-template
+2. https://github.com/smart-on-fhir/Swift-FHIR
+3. https://www.raywenderlich.com/4875322-sign-in-with-apple-using-swiftui
 
 ## Technical Assistance
 If you are seriously working to develop this application and need some assitance you can reach out to the developers. Spencer sms310@pitt.edu or Chris chk124@pitt.edu 
