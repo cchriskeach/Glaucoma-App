@@ -57,8 +57,14 @@ A cloud server can be launched or a localhost server can be made following the d
 ## Video Tutorial 2:
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/Ne1W1m6fFrc/0.jpg)](https://youtu.be/Ne1W1m6fFrc)
 
-## Video Tutorial 3:
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/Ne1W1m6fFrc/0.jpg)](https://youtu.be/Ne1W1m6fFrc)
+## Developer Application Walkthough:
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/dbj0paem438/0.jpg)](https://youtu.be/dbj0paem438)
+
+## Developer Code Walkthough:
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/uk3yv19-ty8/0.jpg)](https://youtu.be/uk3yv19-ty8)
+
+## Swift UI Code Walkthough:
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/uk3yv19-ty8/0.jpg)](https://youtu.be/uk3yv19-ty8)
 
 ## Video Demonstration of the Application
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/Ne1W1m6fFrc/0.jpg)](https://youtu.be/Ne1W1m6fFrc)
@@ -70,6 +76,7 @@ A cloud server can be launched or a localhost server can be made following the d
 3. A logger for logging events
 4. Add more user functionality for getting and using data.
 5. During very very slow internet connectivity the device may not respond, this is a rare occurance.
+6. If you delete all observation or the patient you need to restart the application
 
 ## Technical Assistance
 If you are seriously working to develop this application and need some assitance you can reach out to the developers. Spencer sms310@pitt.edu or Chris chk124@pitt.edu 
