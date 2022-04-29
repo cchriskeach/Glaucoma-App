@@ -3,11 +3,11 @@
 ## Technical Documentation
 ### Purpose of the application:
 #### Introduction
-    Glac-home-a is an application that is currently in the development but is being used in an NSF funded grant research program. The goal of the research project is to create a device for at-home interocular pressure reading that will then send the data to the a phone so that the data can be viewed, and shipped to the server. The theoretical device which has not yet been fully developed would connect to the phone via Bluetooth.
+Glac-home-a is an application that is currently in the development but is being used in an NSF funded grant research program. The goal of the research project is to create a device for at-home interocular pressure reading that will then send the data to the a phone so that the data can be viewed, and shipped to the server. The theoretical device which has not yet been fully developed would connect to the phone via Bluetooth.
 #### Aid Development Process
-    Since at the current moment the interocular pressure reading device is still in development the engineers making the device need a software solution to aid the debugging process along with have a baseline starting point for when the device will be used more extensively in the beta testing phase of the project.
+Since at the current moment the interocular pressure reading device is still in development the engineers making the device need a software solution to aid the debugging process along with have a baseline starting point for when the device will be used more extensively in the beta testing phase of the project.
 ### Main Features
-    The main features that were implemented in this application are as follows:
+The main features that were implemented in this application are as follows:
 1. Login and user verification process
 2. User and Server Account Creation
 3. Bluetooth data collection
