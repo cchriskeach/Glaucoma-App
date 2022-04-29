@@ -48,7 +48,7 @@ A cloud server can be launched or a localhost server can be made following the d
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/0HpFLE-mc9Y/0.jpg)](https://youtu.be/0HpFLE-mc9Y)
 
 ## Video Tutorial 1:
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/Ne1W1m6fFrc/0.jpg)](https://youtu.be/Ne1W1m6fFrc)
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/nKJfJYOttMo/0.jpg)](https://youtu.be/nKJfJYOttMo)
 1. How to load Xcode
 2. Mac Tools
 3. How to load the reposittory
