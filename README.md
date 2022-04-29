@@ -1,12 +1,13 @@
 # Glac-home-a
-
 ## Technical Documentation
 ### Purpose of the application:
 #### Introduction
-Glac-home-a is an application that is currently in the development but is being used in an NSF funded grant research program. The goal of the research project is to create a device for at-home interocular pressure reading that will then send the data to the a phone so that the data can be viewed, and shipped to the server. The theoretical device which has not yet been fully developed would connect to the phone via Bluetooth.
+Glac-home-a is an application that is currently in the development but is being used in an National Science Foundation (NSF) funded grant research program. The goal of the research project is to create a device for at-home interocular pressure reading that will then send the data to the a phone so that the data can be viewed, and shipped to the server. The theoretical device which has not yet been fully developed would connect to the phone via Bluetooth.
 #### Aid Development Process
 Since at the current moment the interocular pressure reading device is still in development the engineers making the device need a software solution to aid the debugging process along with have a baseline starting point for when the device will be used more extensively in the beta testing phase of the project.
 ### Main Features
+Most features are set up to assist with the development of the physical device associated with this applciation and are not optimized for end user use. Although the funcitons are there and can be easily ported over for end user use.
+
 The main features that were implemented in this application are as follows:
 1. Login and user verification process
 2. User and Server Account Creation
@@ -18,10 +19,9 @@ The main features that were implemented in this application are as follows:
 8. Data is exchanged between the application and the user
 9. Debug mode
 
-### Developer Assistance
+### Developer Quick Start
 
 #### How to build the application
-
 
 #### Developer Account
 In order to build the application with all of its features an Apple Developer account is needed. To purchase an apple developer account please visit developer.apple.com
@@ -47,11 +47,38 @@ A cloud server can be launched or a localhost server can be made following the d
 ## Video on how to launch a real cloud server:
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/0HpFLE-mc9Y/0.jpg)](https://youtu.be/0HpFLE-mc9Y)
 
-## Known Issues
+## Video Tutorial 1:
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/Ne1W1m6fFrc/0.jpg)](https://youtu.be/Ne1W1m6fFrc)
+1. How to load Xcode
+2. Mac Tools
+3. How to load the reposittory
+4. Information on how the application is organized
 
-## Technical Notes
+## Video Tutorial 2:
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/Ne1W1m6fFrc/0.jpg)](https://youtu.be/Ne1W1m6fFrc)
 
-# Open Source License
+## Video Tutorial 3:
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/Ne1W1m6fFrc/0.jpg)](https://youtu.be/Ne1W1m6fFrc)
+
+## Video Demonstration of the Application
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/Ne1W1m6fFrc/0.jpg)](https://youtu.be/Ne1W1m6fFrc)
+
+## Known Issues & Future Development
+
+1. Implement SMART OAuth between the server and client
+2. Implement proper error handling
+3. A logger for logging events
+4. Add more user functionality for getting and using data.
+5. During very very slow internet connectivity the device may not respond, this is a rare occurance.
+
+## Technical Assistance
+If you are seriously working to develop this application and need some assitance you can reach out to the developers. Spencer sms310@pitt.edu or Chris chk124@pitt.edu 
+
+Spencer is currently a M.S.(Professional) in Electrical and Computer Engineering studying in his first year at the University of Pittsburgh. He graduated with his B.S. in Computer Engineering in 2021 from the University of Pittsburgh.
+
+Chris is a senior who is graduating this term with a B.S. in Computer Engineering.
+
+# Open Source Licenses
 
 ## License 1: 
 

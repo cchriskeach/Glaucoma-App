@@ -391,9 +391,10 @@ class StaticMemory
     
     public static func sendRandomData() -> Void
     {
-        for i in 1...100{
+        for i in 1...100 {
             let observation = Observation();
-            observation.CreateIOPObservation(mmHg: Decimal(i), patient: StaticMemory.getPatient())
+            var n = Int.random(in: 1...99)
+            observation.CreateIOPObservation(mmHg: Decimal(n), patient: StaticMemory.getPatient())
 
             //print("\(observation.valueQuantity?.value)")
             observation.create(server, callback: { (error) in
